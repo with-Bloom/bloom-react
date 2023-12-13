@@ -4,11 +4,8 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className="bg-slate-400">
-      <div className="mx-auto flex h-screen w-[375px] flex-col justify-between bg-white px-6 pb-4">
-        {children}
-      </div>
-      ;
+    <div className="bg-slate-100">
+      <div className="mx-auto flex h-screen w-[375px] justify-center bg-white px-6 pb-6">{children}</div>;
     </div>
   );
 };
