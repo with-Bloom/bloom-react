@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import ArrowIcon from 'assets/arrow.svg?react';
-import CloseIcon from 'assets/close.svg?react';
+import ArrowIcon from 'assets/images/arrow.svg?react';
+import CloseIcon from 'assets/images/close.svg?react';
 
 const Header = () => {
   return (

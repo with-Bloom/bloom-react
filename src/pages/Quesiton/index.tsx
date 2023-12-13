@@ -6,7 +6,7 @@ import Header from 'components/Header';
 import Input from 'components/Input';
 import PrimaryButton from 'components/Button/PrimaryButton';
 import NextButton from 'components/Button/NextButton';
-import FlowerIcon from 'assets/flower.svg?react';
+import FlowerIcon from 'assets/images/flower.svg?react';
 
 const selectComponent = ({ type, options }) => {
   switch (type) {
@@ -19,7 +19,7 @@ const selectComponent = ({ type, options }) => {
       );
     case 'image-card-button':
       return (
-        <div className="bg-gray100 flex h-[187px] w-[158px] flex-col items-center justify-between rounded-[5px] py-6 text-[17px] font-medium">
+        <div className="flex h-[187px] w-[158px] flex-col items-center justify-between rounded-[5px] bg-gray100 py-6 text-[17px] font-medium">
           <FlowerIcon />
           <span>신랑</span>
         </div>
