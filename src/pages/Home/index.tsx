@@ -10,21 +10,17 @@ const HomePage = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center">
-        <div>
+      <div className="flex h-full flex-col items-center justify-between pb-10">
+        <div className="flex h-[calc(100vh-95px)] flex-col items-center justify-center">
           <HomeCharacter />
-          <div className="mb-[40px] mt-[33px] flex flex-col items-center gap-[15px]">
-            <span className="font-Pretendard text-2xl font-bold	text-gray500">{title}</span>
-            <span className="font-Pretendard whitespace-pre-line text-center text-[15px] leading-[150%] text-gray300">
-              {subTitle}
-            </span>
-          </div>
+          <span className="font-Pretendard mb-[15px] mt-[33px] text-2xl font-bold	text-gray500">{title}</span>
+          <span className="font-Pretendard whitespace-pre-line text-center text-[15px] leading-[150%] text-gray300">
+            {subTitle}
+          </span>
         </div>
-        <div className="fixed bottom-6">
-          <Link to={'/question'}>
-            <NextButton>축사 만들러 가기</NextButton>
-          </Link>
-        </div>
+        <Link to={'/question'}>
+          <NextButton>축사 만들러 가기</NextButton>
+        </Link>
       </div>
     </Layout>
   );
