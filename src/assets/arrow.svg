@@ -1,7 +1,5 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="arrow _l">
-<g id="Group" opacity="0.9">
-<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M17.5 4.33784L9.25 12L17.5 19.6622L16.0595 21L6.5 12L6.89286 11.6351L7.80952 10.7838L16.0595 3L17.5 4.33784Z" fill="#191F28"/>
-</g>
+<svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.9">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.5 1.33784L3.25 9L11.5 16.6622L10.0595 18L0.500001 9L0.892857 8.63514L1.80952 7.78378L10.0595 5.80344e-08L11.5 1.33784Z" fill="#191F28"/>
 </g>
 </svg>
