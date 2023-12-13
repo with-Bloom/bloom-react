@@ -4,7 +4,7 @@ type Props = {
 
 const NextButton = ({ children }: Props) => {
   return (
-    <div className="flex h-[55px] w-[327px] items-center justify-center rounded-[10px] bg-gray400 text-[17px] font-bold text-white">
+    <div className="font-Pretendard flex h-[55px] w-[327px] items-center justify-center rounded-[10px] bg-gray400 text-[17px] font-bold text-white">
       {children}
     </div>
   );

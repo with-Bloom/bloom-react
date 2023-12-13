@@ -11,6 +11,9 @@ export default {
         indigo: '#7990F6',
       },
     },
+    fontFamily: {
+      Pretendard: ['Pretendard'],
+    },
     plugins: [],
   },
 };
