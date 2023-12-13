@@ -4,7 +4,7 @@ type Props = {
 
 const PrimaryButton = ({ children }: Props) => {
   return (
-    <button className="bg-gray100 text-gray400 flex h-11 w-[327px] items-center justify-items-start rounded-[5px] p-[13px] text-[17px] font-medium">
+    <button className="flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] text-[17px] font-medium text-gray400">
       {children}
     </button>
   );
