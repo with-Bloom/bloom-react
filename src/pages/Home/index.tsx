@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Layout from 'layout/index';
-import NextButton from 'components/Button/NextButton';
 import HomeCharacter from 'assets/images/home-character.svg?react';
 
 const HomePage = () => {
@@ -21,7 +20,9 @@ const HomePage = () => {
           </span>
         </div>
         <Link to={'/question'}>
-          <NextButton>축사 만들러 가기</NextButton>
+          <div className="bg-gray600 flex h-[55px] w-[327px] items-center justify-center rounded-[10px] font-Pretendard text-[17px] font-bold text-white">
+            축사 만들러 가기
+          </div>
         </Link>
       </div>
     </Layout>
