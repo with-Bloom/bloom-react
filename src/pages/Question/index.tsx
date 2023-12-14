@@ -4,10 +4,10 @@ import Layout from 'layout/index';
 import QuestionTitle from 'components/QuestionTitle';
 import Header from 'components/Header';
 import SelectComponent from 'components/SelectComponent';
+import ProgressBar from 'components/ProgressBar';
 
 const QuestionPage = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const LAST_PAGE = 9;
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handleClick = () => setCurrentPage((state) => state + 1);
 
@@ -17,9 +17,7 @@ const QuestionPage = () => {
         <div className="flex h-full flex-col justify-between px-6 pb-10">
           <div>
             <Header />
-            <span className="font-Pretendard text-sm font-medium text-gray200">
-              {currentPage}/{LAST_PAGE}
-            </span>
+            <ProgressBar currentPage={currentPage} />
             {questionList.map((el) => {
               return (
                 currentPage === el.page && (
