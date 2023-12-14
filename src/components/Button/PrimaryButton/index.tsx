@@ -1,12 +1,21 @@
 type Props = {
-  children: string;
+  options: string[];
 };
 
-const PrimaryButton = ({ children }: Props) => {
+const PrimaryButton = ({ options }: Props) => {
   return (
-    <button className="flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] text-[17px] font-medium text-gray400">
-      {children}
-    </button>
+    <ul className="flex flex-col gap-3">
+      {options.map((el) => {
+        return (
+          <button
+            key={el}
+            className="text-gray600 flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] font-Pretendard text-[17px] font-medium"
+          >
+            {el}
+          </button>
+        );
+      })}
+    </ul>
   );
 };
 
