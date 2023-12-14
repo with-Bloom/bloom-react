@@ -10,8 +10,17 @@ import NextButton from 'components/Button/NextButton';
 const QuestionPage = () => {
   const LAST_PAGE = 9;
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [inputCount, setInputCount] = useState<number>(0);
 
-  const handleClick = () => setCurrentPage((state) => state + 1);
+  const handleClick = () => {
+    setCurrentPage((state) => state + 1);
+    setInputCount(0);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setInputCount(e.target.value.length);
+    console.log(inputCount);
+  };
 
   return (
     <>
@@ -27,10 +36,15 @@ const QuestionPage = () => {
                 <div className="flex h-[calc(100vh-84px)] flex-col justify-between">
                   <div key={el.page}>
                     <QuestionTitle>{el.question}</QuestionTitle>
-                    {SelectComponent({ type: el.type, options: el.options, onClick: handleClick })}
+                    {SelectComponent({
+                      type: el.type,
+                      options: el.options,
+                      onClick: handleClick,
+                      onChange: handleInputChange,
+                    })}
                   </div>
                   {(el.type === 'input' || el.type === 'textarea') && (
-                    <NextButton onClick={handleClick}>
+                    <NextButton onClick={handleClick} disabled={inputCount === 0}>
                       {el.page === LAST_PAGE ? '내 축사 확인하기' : '다음'}
                     </NextButton>
                   )}
