@@ -3,28 +3,9 @@ import { questionList } from 'src/data/questionList';
 import Layout from 'layout/index';
 import QuestionTitle from 'components/QuestionTitle';
 import Header from 'components/Header';
-import Input from 'components/Input';
 import NextButton from 'components/Button/NextButton';
 
-import ImageCardButton from 'components/Button/ImageCardButton';
-import ImageButton from 'components/Button/ImageButton';
-import Textarea from 'components/Textarea';
-import PrimaryButton from 'components/Button/PrimaryButton';
-
-const selectComponent = ({ type, options }) => {
-  switch (type) {
-    case 'input':
-      return <Input placeholder={options} />;
-    case 'image-card-button':
-      return <ImageCardButton options={options} />;
-    case 'image-button':
-      return <ImageButton options={options} />;
-    case 'primary-button':
-      return <PrimaryButton options={options} />;
-    case 'textarea':
-      return <Textarea placeholder={options} />;
-  }
-};
+import SelectComponent from 'components/SelectComponent';
 
 const QuestionPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,10 +23,10 @@ const QuestionPage = () => {
             {questionList.map((el) => {
               return (
                 currentPage === el.page && (
-                  <>
+                  <div key={el.page}>
                     <QuestionTitle>{el.question}</QuestionTitle>
-                    {selectComponent(el)}
-                  </>
+                    {SelectComponent(el)}
+                  </div>
                 )
               );
             })}
