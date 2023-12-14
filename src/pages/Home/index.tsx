@@ -12,15 +12,15 @@ const HomePage = () => {
       <div className="flex h-full flex-col items-center justify-between pb-10">
         <div className="flex h-[calc(100vh-95px)] flex-col items-center justify-center">
           <HomeCharacter />
-          <span className="text-gray700 mb-[15px] mt-[33px] font-Pretendard text-[38px]	font-bold">
+          <span className="text-gray800 mb-[15px] mt-[33px] font-Pretendard text-[38px]	font-bold">
             {title}
           </span>
-          <span className="whitespace-pre-line text-center font-Pretendard text-[15px] leading-[150%] text-gray500">
+          <span className="text-gray600 whitespace-pre-line text-center font-Pretendard text-[15px] leading-[150%]">
             {subTitle}
           </span>
         </div>
         <Link to={'/question'}>
-          <div className="bg-gray600 flex h-[55px] w-[327px] items-center justify-center rounded-[10px] font-Pretendard text-[17px] font-bold text-white">
+          <div className="bg-gray700 flex h-[55px] w-[327px] items-center justify-center rounded-[10px] font-Pretendard text-[17px] font-bold text-white">
             축사 만들러 가기
           </div>
         </Link>

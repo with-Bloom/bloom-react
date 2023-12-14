@@ -10,7 +10,7 @@ const PrimaryButton = ({ options, onClick }: Props) => {
         return (
           <button
             key={el}
-            className="text-gray600 flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] font-Pretendard text-[17px] font-medium"
+            className="text-gray700 flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] font-Pretendard text-[17px] font-medium"
             onClick={onClick}
           >
             {el}

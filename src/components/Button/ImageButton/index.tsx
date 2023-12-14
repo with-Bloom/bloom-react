@@ -12,7 +12,7 @@ const ImageButton = ({ options, onClick }: Props) => {
         return (
           <div key={el} className="flex flex-col items-center gap-[9px]">
             <CloudIcon className="cursor-pointer" onClick={onClick} />
-            <span className="font-Pretendard text-sm font-medium text-gray400">{el}</span>
+            <span className="font-Pretendard text-sm font-medium text-gray500">{el}</span>
           </div>
         );
       })}
