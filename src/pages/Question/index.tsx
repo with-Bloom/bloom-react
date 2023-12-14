@@ -3,8 +3,6 @@ import { questionList } from 'src/data/questionList';
 import Layout from 'layout/index';
 import QuestionTitle from 'components/QuestionTitle';
 import Header from 'components/Header';
-import NextButton from 'components/Button/NextButton';
-
 import SelectComponent from 'components/SelectComponent';
 
 const QuestionPage = () => {
@@ -27,13 +25,12 @@ const QuestionPage = () => {
                 currentPage === el.page && (
                   <div key={el.page}>
                     <QuestionTitle>{el.question}</QuestionTitle>
-                    {SelectComponent(el)}
+                    {SelectComponent({ type: el.type, options: el.options, onClick: handleClick })}
                   </div>
                 )
               );
             })}
           </div>
-          <NextButton onClick={handleClick}>다음</NextButton>
         </div>
       </Layout>
     </>
