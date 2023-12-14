@@ -1,5 +1,5 @@
 type Props = {
-  children: ReactNode;
+  children: string;
 };
 
 const QuestionTitle = ({ children }: Props) => {

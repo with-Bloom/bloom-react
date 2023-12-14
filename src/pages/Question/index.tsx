@@ -27,12 +27,8 @@ const selectComponent = ({ type, options }) => {
 };
 
 const QuestionPage = () => {
-  const [currentPage, setCurrentPage] = useState(8);
+  const [currentPage, setCurrentPage] = useState(1);
   const LAST_PAGE = 9;
-
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
-    setCurrentPage((current) => current + 1);
-  };
 
   return (
     <>
