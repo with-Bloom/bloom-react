@@ -13,7 +13,7 @@ type Props = {
 const SelectComponent = ({ type, options, onClick }: Props): React.ReactNode => {
   switch (type) {
     case 'input':
-      return <Input placeholder={options as string} onClick={onClick} />;
+      return <Input placeholder={options as string} />;
     case 'image-card-button':
       return <ImageCardButton options={options as string[]} onClick={onClick} />;
     case 'image-button':
@@ -21,7 +21,7 @@ const SelectComponent = ({ type, options, onClick }: Props): React.ReactNode => 
     case 'primary-button':
       return <PrimaryButton options={options as string[]} onClick={onClick} />;
     case 'textarea':
-      return <Textarea placeholder={options as string} onClick={onClick} />;
+      return <Textarea placeholder={options as string} />;
     default:
       return null;
   }
