@@ -1,7 +1,7 @@
 import CloudIcon from 'assets/images/cloud.svg?react';
 
 type Props = {
-  options?: React.ReactNode;
+  options: string[];
 };
 
 const ImageButton = ({ options }: Props) => {

@@ -1,5 +1,5 @@
 type Props = {
-  placeholder?: React.ReactNode;
+  placeholder: string;
 };
 
 const Input = ({ placeholder }: Props) => {

@@ -1,7 +1,7 @@
 import FlowerIcon from 'assets/images/flower.svg?react';
 
 type Props = {
-  options?: React.ReactNode;
+  options: string[];
 };
 
 const ImageCardButton = ({ options }: Props) => {
