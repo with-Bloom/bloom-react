@@ -11,6 +11,8 @@ const QuestionPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const LAST_PAGE = 9;
 
+  const handleClick = () => setCurrentPage((state) => state + 1);
+
   return (
     <>
       <Layout>
@@ -31,7 +33,7 @@ const QuestionPage = () => {
               );
             })}
           </div>
-          <NextButton>다음</NextButton>
+          <NextButton onClick={handleClick}>다음</NextButton>
         </div>
       </Layout>
     </>
