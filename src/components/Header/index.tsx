@@ -4,7 +4,7 @@ import CloseIcon from 'assets/images/close.svg?react';
 
 const Header = () => {
   return (
-    <div className="flex h-12 w-full items-center justify-between">
+    <div className="flex h-16 w-full items-center justify-between">
       <ArrowIcon />
       <Link to={'/'}>
         <CloseIcon />
