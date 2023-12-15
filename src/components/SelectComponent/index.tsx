@@ -4,26 +4,31 @@ import ImageButton from 'components/Button/ImageButton';
 import PrimaryButton from 'components/Button/PrimaryButton';
 import Textarea from 'components/Textarea';
 
-type Props = {
-  type: string;
-  options: string | string[];
-  onClick: () => void;
-  onChange?: React.ChangeEventHandler<HTMLElement> | undefined;
-  count: number;
+type imageButtonProps = {
+  target: string;
+  color: string;
 };
 
-const SelectComponent = ({ type, options, onClick, onChange, count }: Props): React.ReactNode => {
+type Props = {
+  type: string;
+  options: string | string[] | imageButtonProps[];
+  onClick: () => void;
+  onChange?: React.ChangeEventHandler<HTMLElement> | undefined;
+  count?: number;
+};
+
+const SelectComponent: React.FC<Props> = ({ type, options, onClick, onChange, count }: Props) => {
   switch (type) {
     case 'input':
       return <Input placeholder={options as string} onChange={onChange} />;
     case 'image-card-button':
-      return <ImageCardButton options={options as string[]} onClick={onClick} />;
+      return <ImageCardButton options={options as imageButtonProps[]} onClick={onClick} />;
     case 'image-button':
-      return <ImageButton options={options as string[]} onClick={onClick} />;
+      return <ImageButton options={options as imageButtonProps[]} onClick={onClick} />;
     case 'primary-button':
       return <PrimaryButton options={options as string[]} onClick={onClick} />;
     case 'textarea':
-      return <Textarea placeholder={options as string} onChange={onChange} count={count} />;
+      return <Textarea placeholder={options as string} onChange={onChange} count={count || 0} />;
     default:
       return null;
   }
