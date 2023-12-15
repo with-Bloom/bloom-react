@@ -15,13 +15,24 @@ export const questionList = [
     page: 3,
     question: '축사를 받을 사람은\n신랑인가요, 신부인가요?',
     type: 'image-card-button',
-    options: ['신랑', '신부'],
+    options: [
+      { target: '신랑', color: '#AEC9FF' },
+      { target: '신부', color: '#FB5500' },
+    ],
   },
   {
     page: 4,
     question: '축사를 받는 사람을\n뭐라고 부르면 좋을까요?',
     type: 'image-button',
-    options: ['친구', '오빠', '언니', '동생', '형', '누나', '기타'],
+    options: [
+      { target: '친구', color: '#C9F4B4' },
+      { target: '오빠', color: '#D6E3FF' },
+      { target: '언니', color: '#F96E47' },
+      { target: '동생', color: '#D1CEFF' },
+      { target: '형', color: '#AEC9FF' },
+      { target: '누나', color: '#E991FB' },
+      { target: '기타', color: '#EFEEFF' },
+    ],
   },
   {
     page: 5,
