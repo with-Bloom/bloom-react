@@ -31,7 +31,7 @@ export const questionList = [
       { target: '동생', color: '#D1CEFF' },
       { target: '형', color: '#AEC9FF' },
       { target: '누나', color: '#E991FB' },
-      { target: '기타', color: '#EFEEFF' },
+      { target: '기타', color: '#C9F4B4' },
     ],
   },
   {
