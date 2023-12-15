@@ -1,15 +1,15 @@
 export const questionList = [
   {
     page: 1,
-    question: '축사를 할 사람의\n이름을 알려 주세요.',
+    question: '축사를 할 분의\n이름을 알려 주세요.',
     type: 'input',
-    options: '이름을 작성해주세요.',
+    options: 'ex. 홍길동',
   },
   {
     page: 2,
-    question: '축사를 받을 사람의\n이름을 알려 주세요.',
+    question: '축사를 받을 분의\n이름을 알려 주세요.',
     type: 'input',
-    options: '이름을 작성해주세요.',
+    options: 'ex. 홍길동',
   },
   {
     page: 3,
@@ -31,7 +31,6 @@ export const questionList = [
       { target: '동생', color: '#D1CEFF' },
       { target: '형', color: '#AEC9FF' },
       { target: '누나', color: '#E991FB' },
-      { target: '기타', color: '#C9F4B4' },
     ],
   },
   {
@@ -56,12 +55,12 @@ export const questionList = [
     page: 8,
     question: '축사 중간에 들어갈 재밌는\n에피소드가 있다면 알려 주세요.',
     type: 'textarea',
-    options: 'ex. 오빠는 나에게 신부 언니와의 연애\n고민 상담했다. (최대 500자)',
+    options: 'ex. 오빠는 나에게 신부 언니와의 연애\n고민 상담했다.',
   },
   {
     page: 9,
     question: '축사에서 마지막으로 하고\n싶은 말이 있다면 알려 주세요.',
     type: 'textarea',
-    options: 'ex. 행복하게 잘 살아라! (최대 500자)',
+    options: 'ex. 행복하게 잘 살아라!',
   },
 ];
