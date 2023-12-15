@@ -9,9 +9,10 @@ type Props = {
   options: string | string[];
   onClick: () => void;
   onChange?: React.ChangeEventHandler<HTMLElement> | undefined;
+  count: number;
 };
 
-const SelectComponent = ({ type, options, onClick, onChange }: Props): React.ReactNode => {
+const SelectComponent = ({ type, options, onClick, onChange, count }: Props): React.ReactNode => {
   switch (type) {
     case 'input':
       return <Input placeholder={options as string} onChange={onChange} />;
@@ -22,7 +23,7 @@ const SelectComponent = ({ type, options, onClick, onChange }: Props): React.Rea
     case 'primary-button':
       return <PrimaryButton options={options as string[]} onClick={onClick} />;
     case 'textarea':
-      return <Textarea placeholder={options as string} onChange={onChange} />;
+      return <Textarea placeholder={options as string} onChange={onChange} count={count} />;
     default:
       return null;
   }

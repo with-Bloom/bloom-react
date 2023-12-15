@@ -19,7 +19,6 @@ const QuestionPage = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setInputCount(e.target.value.length);
-    console.log(inputCount);
   };
 
   return (
@@ -41,6 +40,7 @@ const QuestionPage = () => {
                       options: el.options,
                       onClick: handleClick,
                       onChange: handleInputChange,
+                      count: inputCount,
                     })}
                   </div>
                   {(el.type === 'input' || el.type === 'textarea') && (
