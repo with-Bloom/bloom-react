@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Layout from 'layout/index';
-import HomeImage from 'assets/images/home-Image.svg?react';
+import HomeImage from 'assets/images/home-image.svg?react';
 import Logo from 'assets/images/logo.svg?react';
 
 const HomePage = () => {
