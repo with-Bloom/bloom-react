@@ -9,12 +9,12 @@ const Textarea = ({ placeholder, onChange, count }: Props) => {
     <label htmlFor="hi" className="relative flex flex-col gap-3">
       <textarea
         id="hi"
-        className="resize-none text-gray700 h-[122px] w-[327px] rounded-[5px] bg-gray100 p-4 font-Pretendard text-[15px] font-medium placeholder-gray400 caret-indigo outline-indigo"
+        className="h-[122px] w-[327px] resize-none	overflow-auto rounded-[5px] bg-gray100 px-4 pb-[35px] pt-[15px] font-Pretendard text-[15px] tracking-[-0.5px] text-gray700 placeholder-gray400 caret-indigo outline-indigo"
         placeholder={placeholder}
         maxLength={500}
         onChange={onChange}
       ></textarea>
-      <span className="text-xxs absolute bottom-1 right-2 text-sm text-zinc-300">{count}/500자</span>
+      <span className=" text-xxs text-gray1000 absolute bottom-2 right-3 text-sm">{count}/500자</span>
     </label>
   );
 };
