@@ -5,23 +5,42 @@
 @font-face {
   font-family: Pretendard;
   font-weight: 400;
-  src: local("Pretendard Regular"),
-  url("assets/fonts/Pretendard-Regular.woff") format('woff'),
-  url("assets/fonts/Pretendard-Regular.woff2") format('woff2');
+  src:
+    local('Pretendard Regular'),
+    url('assets/fonts/Pretendard-Regular.woff') format('woff'),
+    url('assets/fonts/Pretendard-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: Pretendard;
   font-weight: 500;
-  src: local("Pretendard Medium"),
-  url("assets/fonts/Pretendard-Medium.woff") format('woff'),
-  url("assets/fonts/Pretendard-Medium.woff2") format('woff2');
+  src:
+    local('Pretendard Medium'),
+    url('assets/fonts/Pretendard-Medium.woff') format('woff'),
+    url('assets/fonts/Pretendard-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-family: Pretendard;
   font-weight: 700;
-  src: local("Pretendard Bold"),
-  url("assets/fonts/Pretendard-Bold.woff") format('woff'),
-  url("assets/fonts/Pretendard-Bold.woff2") format('woff2');
+  src:
+    local('Pretendard Bold'),
+    url('assets/fonts/Pretendard-Bold.woff') format('woff'),
+    url('assets/fonts/Pretendard-Bold.woff2') format('woff2');
+}
+
+.swal2-popup {
+  font-size: 14px !important;
+}
+
+.swal2-styled {
+  padding: 10px 32px 10px 32px !important;
+  margin: 20px 10px 0px 10px !important;
+  width: 170px;
+  height: 45px;
+}
+
+body {
+  height: 100%;
+  background-color: rgb(241 245 249);
 }
