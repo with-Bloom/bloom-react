@@ -1,14 +1,23 @@
 import LoadingCharactor from 'assets/images/loading-character.svg?react';
 import { BeatLoader } from 'react-spinners';
+import { Link } from 'react-router-dom';
+import ArrowIcon from 'assets/images/arrow.svg?react';
+import CloseIcon from 'assets/images/close.svg?react';
 
 const Loading = () => {
   const title = '축사는 보통 3~4분 정도로 준비하는\n경우가 많아요. 너무 길면 하객들이\n지루해 할 거예요.';
 
   return (
-    <div className="absolute flex h-full w-[375px] flex-col justify-center bg-white px-6">
+    <div className="flex h-full w-[375px] flex-col bg-white px-6">
+      <div className="flex h-16 w-full items-center justify-between">
+        <ArrowIcon />
+        <Link to={'/'}>
+          <CloseIcon />
+        </Link>
+      </div>
       <div className="flex flex-col gap-1.5">
-        <div className="flex items-center justify-between">
-          <span className="font-Pretendard text-[22px] font-bold tracking-[-0.5px] text-gray800">
+        <div className="mt-[36px] flex items-center justify-between">
+          <span className=" font-Pretendard text-[22px] font-bold tracking-[-0.5px] text-gray800">
             축사를 작성하고 있어요!
           </span>
           <BeatLoader color="#606873" size={9} />
