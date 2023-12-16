@@ -2,8 +2,6 @@ import Layout from 'layout/index';
 import ArrowIcon from 'assets/images/arrow.svg?react';
 import ResultIcon from 'assets/images/result-icon.svg?react';
 
-const Image = new URL('/images/background.jpg', import.meta.url).href;
-
 // const precautionList = [
 //   {
 //     title: '📂 축사를 작성할 때',
