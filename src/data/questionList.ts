@@ -55,7 +55,7 @@ export const questionList = [
     page: 8,
     question: '축사 중간에 들어갈 재밌는\n에피소드가 있다면 알려 주세요.',
     type: 'textarea',
-    options: 'ex. 오빠는 나에게 신부 언니와의 연애\n고민 상담했다.',
+    options: 'ex. 오빠는 나에게 신부 언니와의 연애를\n자주 상담했다.',
   },
   {
     page: 9,
