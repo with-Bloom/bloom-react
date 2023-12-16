@@ -75,7 +75,7 @@ const QuestionPage = () => {
     if (currentPage === LAST_PAGE) {
       setIsLoading(true);
       try {
-        const response = await fetch('http://118.67.134.98:8080/api/message', {
+        const response = await fetch('http://115.85.180.119:8080/api/message', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
@@ -93,7 +93,7 @@ const QuestionPage = () => {
       } catch (error) {
         console.error('에러 발생:', error);
       }
-      navigate('/result', { state: { result } });
+      navigate('/result', { state: { result: result, name: answerList.userName } });
     } else {
       setCurrentPage((state) => state + 1);
       setInputCount(0);
