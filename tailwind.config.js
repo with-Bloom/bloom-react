@@ -13,9 +13,11 @@ export default {
         gray800: '#191F28',
         indigo: '#7990F6',
         gray900: '#F5F7F9',
+        gray1000: '#C8CED5',
+        grat1100: '#464854',
       },
       backgroundImage: {
-        gradient: 'url("/images/background.jpg")',
+        gradient: 'url("/images/bg_result.jpg")',
       },
     },
     fontFamily: {
