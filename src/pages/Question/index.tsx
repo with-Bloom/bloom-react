@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { questionList } from 'src/data/questionList';
 import Layout from 'layout/index';
 import QuestionTitle from 'components/QuestionTitle';
@@ -7,18 +8,96 @@ import SelectComponent from 'components/SelectComponent';
 import ProgressBar from 'components/ProgressBar';
 import NextButton from 'components/Button/NextButton';
 
+type answerListType = {
+  targetType: string;
+  targetName: string;
+  relationship: string;
+  userName: string;
+  concept: string;
+  story: string;
+  speechType: string;
+  lastComment: string;
+  minute: number;
+};
+
 const QuestionPage = () => {
   const LAST_PAGE = 9;
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [inputCount, setInputCount] = useState<number>(0);
+  const [input, setInput] = useState<string>('');
+  const [answerList, setAnswerList] = useState<answerListType>({
+    userName: '',
+    targetName: '',
+    targetType: '',
+    relationship: '',
+    minute: 0,
+    speechType: '',
+    concept: '',
+    story: '',
+    lastComment: '',
+  });
 
-  const handleClick = () => {
-    setCurrentPage((state) => state + 1);
-    setInputCount(0);
+  const answerListKeysOrder = [
+    'userName',
+    'targetName',
+    'targetType',
+    'relationship',
+    'minute',
+    'speechType',
+    'concept',
+    'story',
+    'lastComment',
+  ];
+
+  useEffect(() => {
+    console.log(answerList);
+  }, [answerList]);
+
+  const handleClick = async (value: any) => {
+    const currentType = questionList[currentPage - 1].type;
+    const currentKey = answerListKeysOrder[currentPage - 1];
+
+    setAnswerList((prevAnswerList) => {
+      const updatedAnswerList = {
+        ...prevAnswerList,
+        [currentKey]: currentType === 'input' || currentType === 'textarea' ? input : value,
+      };
+      console.log(answerList);
+      return updatedAnswerList;
+    });
+
+    console.log(answerList);
+
+    if (currentPage === LAST_PAGE) {
+      try {
+        const response = await fetch('http://118.67.134.98:8080/api/message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+          },
+          body: JSON.stringify(answerList),
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          console.log('결과: ', result);
+        } else {
+          console.error('데이터 전송 실패:', response.statusText);
+        }
+      } catch (error) {
+        console.error('에러 발생:', error);
+      }
+      navigate('/result');
+    } else {
+      setCurrentPage((state) => state + 1);
+      setInputCount(0);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setInputCount(e.target.value.length);
+    setInput(e.target.value);
   };
 
   return (

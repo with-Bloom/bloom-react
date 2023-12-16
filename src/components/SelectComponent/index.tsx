@@ -12,7 +12,7 @@ type imageButtonProps = {
 type Props = {
   type: string;
   options: string | string[] | imageButtonProps[];
-  onClick: () => void;
+  onClick: any;
   onChange?: React.ChangeEventHandler<HTMLElement> | undefined;
   count?: number;
 };

@@ -2,7 +2,7 @@ import TriangleIcon from 'assets/images/triangle.svg?react';
 
 type Props = {
   options: string[];
-  onClick: () => void;
+  onClick: any;
 };
 
 const PrimaryButton = ({ options, onClick }: Props) => {
@@ -13,10 +13,10 @@ const PrimaryButton = ({ options, onClick }: Props) => {
       {options.map((el) => (
         <div key={el} className="relative">
           <button
-            className={`text-gray700 flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-Pretendard font-medium hover:bg-gray-200 ${
+            className={`flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-Pretendard font-medium text-gray700 hover:bg-gray-200 ${
               el === '3분' ? 'relative' : ''
             }`}
-            onClick={onClick}
+            onClick={() => onClick(el)}
           >
             {el}
           </button>

@@ -7,7 +7,7 @@ type Option = {
 
 type Props = {
   options: Option[];
-  onClick: () => void;
+  onClick: any;
 };
 
 const ImageButton = ({ options, onClick }: Props) => {
@@ -16,7 +16,11 @@ const ImageButton = ({ options, onClick }: Props) => {
       {options.map((el) => {
         return (
           <div key={el.target} className="flex flex-col items-center gap-[9px]">
-            <CloudIcon className="cursor-pointer hover:fill-indigo" onClick={onClick} fill={el.color} />
+            <CloudIcon
+              className="cursor-pointer hover:fill-indigo"
+              onClick={() => onClick(el.target)}
+              fill={el.color}
+            />
             <span className="font-Pretendard text-sm font-medium text-gray500">{el.target}</span>
           </div>
         );

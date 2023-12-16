@@ -1,6 +1,6 @@
 type Props = {
   children: string;
-  onClick: () => void;
+  onClick: any;
   disabled: boolean;
 };
 
