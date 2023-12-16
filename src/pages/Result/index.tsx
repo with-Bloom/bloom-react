@@ -1,6 +1,7 @@
 import Layout from 'layout/index';
 import ArrowIcon from 'assets/images/arrow.svg?react';
 import ResultIcon from 'assets/images/result-icon.svg?react';
+import { useLocation } from 'react-router-dom';
 
 // const precautionList = [
 //   {
@@ -31,6 +32,10 @@ import ResultIcon from 'assets/images/result-icon.svg?react';
 const ResultPage = () => {
   const title = '수빈님을 위한\n축사가 도착했어요';
   const precaution = '축사를 읽을 때 이런 부분을\n조심해주세요';
+  const location = useLocation();
+  const result = location.state.result;
+
+  console.log('응담결과:' + result);
 
   return (
     <Layout>
@@ -42,21 +47,12 @@ const ResultPage = () => {
           <span className="whitespace-pre-line font-Pretendard	text-2xl font-bold text-gray800">{title}</span>
           <ResultIcon />
         </div>
-        {/* 결과 카드 */}
-        <div className=" w-[327px] rounded-[10px] border border-solid border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] via-transparent to-[rgba(255,255,255,0.52)] px-[26px] py-[29px] pt-[29px] backdrop-blur-[10px]">
-          <span className="font-Pretendard text-[15px] leading-[170%] text-gray600">
-            인생의 꽃피는 찬란한 순간을 인생의 같이 만들어보세요 찬란한 뮤자이너는 고객과 커뮤니케이션을 넘어
-            고객으로부터 영감을 얻는 사람 결과물을 넘어 아이디어가 담긴 창작물을 만드는 사람 시선을 끄는 것을
-            넘어질리지 않는 아름다움을 추구하는 사람입니다. 찬란한 순간을 인생의 같이 넘어아이디어가 담긴
-            창작물을 만드는 사람 시선을 끄는 것을 넘어질리지 않는 아름다움을 추구하는 사람입니다. 찬란한
-            순간을 인생의 같이 넘어아이디어가 담긴 창작물을 만드는 사람 시선을 끄는 것을 넘어질리지 않는
-            아름다움을
-          </span>
+        <div className=" w-[327px] border border-solid border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] via-transparent to-[rgba(255,255,255,0.52)] px-[26px] py-[29px] pt-[29px] backdrop-blur-[10px]">
+          <span className="font-Pretendard text-[15px] leading-[170%] text-gray600">{result.result}</span>
           <button className="mt-[57px] flex h-[55px] w-[275px] items-center justify-center rounded-[10px] bg-gray700 font-Pretendard text-[17px] font-bold text-white">
             축사 복사하기
           </button>
         </div>
-        {/* 축사 주의사항 */}
         <span>{precaution}</span>
         <div className="bg-gray900 w-[327px] rounded-[10px] px-4 py-[29px] opacity-70	"></div>
         <button className="mt-[57px] flex h-[55px] w-[327px] items-center justify-center rounded-[10px] bg-gray700 font-Pretendard text-[17px] font-bold text-white">

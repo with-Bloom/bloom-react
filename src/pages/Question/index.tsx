@@ -7,6 +7,7 @@ import Header from 'components/Header';
 import SelectComponent from 'components/SelectComponent';
 import ProgressBar from 'components/ProgressBar';
 import NextButton from 'components/Button/NextButton';
+import Loading from 'pages/Loading';
 
 type answerListType = {
   targetType: string;
@@ -26,6 +27,7 @@ const QuestionPage = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [inputCount, setInputCount] = useState<number>(0);
   const [input, setInput] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [answerList, setAnswerList] = useState<answerListType>({
     userName: '',
     targetName: '',
@@ -55,6 +57,7 @@ const QuestionPage = () => {
   }, [answerList]);
 
   const handleClick = async (value: any) => {
+    let result;
     const currentType = questionList[currentPage - 1].type;
     const currentKey = answerListKeysOrder[currentPage - 1];
 
@@ -70,6 +73,7 @@ const QuestionPage = () => {
     console.log(answerList);
 
     if (currentPage === LAST_PAGE) {
+      setIsLoading(true);
       try {
         const response = await fetch('http://118.67.134.98:8080/api/message', {
           method: 'POST',
@@ -80,15 +84,16 @@ const QuestionPage = () => {
         });
 
         if (response.ok) {
-          const result = await response.json();
-          console.log('결과: ', result);
+          result = await response.json();
+          console.log(result);
+          setIsLoading(false);
         } else {
           console.error('데이터 전송 실패:', response.statusText);
         }
       } catch (error) {
         console.error('에러 발생:', error);
       }
-      navigate('/result');
+      navigate('/result', { state: { result } });
     } else {
       setCurrentPage((state) => state + 1);
       setInputCount(0);
@@ -103,6 +108,7 @@ const QuestionPage = () => {
   return (
     <>
       <Layout>
+        {isLoading && <Loading />}
         <div className="flex h-full flex-col justify-between px-6 pb-10">
           <div>
             <Header />
