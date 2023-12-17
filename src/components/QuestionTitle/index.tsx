@@ -5,7 +5,7 @@ type Props = {
 const QuestionTitle = ({ children }: Props) => {
   return (
     <div className="mb-[33px] mt-[52px] w-full">
-      <span className="text-gray800 whitespace-pre-line	font-Pretendard text-2xl font-bold">
+      <span className="whitespace-pre-line font-Pretendard	text-[24px] font-bold leading-[34px] tracking-[-0.5px] text-gray800">
         {children}
       </span>
     </div>

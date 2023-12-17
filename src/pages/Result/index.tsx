@@ -89,19 +89,19 @@ const ResultPage = () => {
           <div className="mb-[14px] whitespace-pre-line font-Pretendard text-[20px] font-bold leading-[28px] tracking-[-0.5px] text-gray800">
             {precaution}
           </div>
-          {precautionList.map((el) => (
-            <div
-              key={el.title}
-              className="mb-4 w-[327px]  rounded-[10px] bg-gray900 px-4 py-[29px] opacity-70"
-            >
-              <span className="mb-[18px] font-Pretendard text-base font-bold text-black">{el.title}</span>
-              {el.description.map((el) => (
-                <li key={el} className="trackgin-[-0.5px] text-[14px] leading-[163%]">
-                  {el}
-                </li>
-              ))}
+          {precautionList.map((el, index) => (
+            <div key={index} className="mb-4 w-[327px] rounded-[10px] bg-gray900 px-4 py-[29px] opacity-70">
+              <div className="mb-[6px] font-Pretendard text-base font-bold text-black">{el.title}</div>
+              <ul className="list-disc pl-4">
+                {el.description.map((desc, descIndex) => (
+                  <li key={descIndex} className="mt-[12px] text-[14px] leading-[163%] tracking-[-0.5px]">
+                    {desc}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
+
           <Link to={'/'}>
             <button className="mt-[28px] flex h-[55px] w-[327px] items-center justify-center rounded-[10px] bg-gray700 font-Pretendard text-[17px] font-bold text-white">
               홈으로 가기

@@ -21,7 +21,7 @@ const ImageButton = ({ options, onClick }: Props) => {
               onClick={() => onClick(el.target)}
               fill={el.color}
             />
-            <span className="font-Pretendard text-sm font-medium text-gray500">{el.target}</span>
+            <span className="font-Pretendard text-sm text-gray500">{el.target}</span>
           </div>
         );
       })}

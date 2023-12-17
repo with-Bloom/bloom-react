@@ -21,7 +21,7 @@ const ImageCardButton = ({ options, onClick }: Props) => {
             onClick={() => onClick(el.target)}
           >
             <FlowerIcon fill={el.color} />
-            <span className="font-Pretendard text-[17px] font-medium">{el.target}</span>
+            <span className="font-Pretendard text-[17px]">{el.target}</span>
           </button>
         );
       })}
