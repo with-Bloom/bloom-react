@@ -13,7 +13,7 @@ const PrimaryButton = ({ options, onClick }: Props) => {
       {options.map((el) => (
         <div key={el} className="relative">
           <button
-            className={`flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-Pretendard text-gray700 hover:bg-indigo ${
+            className={`custom-hover flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-Pretendard text-gray700 ${
               el === '3분' ? 'relative' : ''
             }`}
             onClick={() => onClick(el)}
