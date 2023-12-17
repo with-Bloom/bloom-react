@@ -45,12 +45,22 @@ const ResultPage = () => {
   });
 
   const location = useLocation();
+  const answerList = location.state.answerList;
 
-  const result = location.state.result;
-  const name = location.state.name;
-
-  const title = `${name}님을 위한\n축사가 도착했어요`;
+  const title = `${answerList.userName}님을 위한\n축사가 도착했어요`;
   const precaution = '축사를 읽을 때 이런 부분을\n조심해주세요';
+  const speechContent = `
+  나의 ${answerList.relationship}에게, 오늘 이렇게 많은 사람들 앞에서 너의 결혼을 축하하게
+  되어서 너무 기뻐! 내가 널 처음 만났을 때가 아직도 생생하게 기억나는데, 우리 둘 다 교복 입고 학교
+  다닐 때였잖아. 그때부터 지금까지 우리 참 많은 일들이 있었다 그치? 매일 학원 끝나면 같이
+  떡볶이 먹고, 주말에는 영화도 보고 쇼핑도 하고... 그렇게 함께한 시간들이 차곡차곡 쌓여서 지금
+  여기까지 온 것 같아. 이제는 서로 다른 길을 가야 한다는 게 조금 서운하기도 하지만, 그래도 난 네가
+  행복해질 수 있다면 언제든지 응원할 준비가 되어있어! 너랑 같이 있으면 항상 웃음이 끊이지
+  않았던 것 같아. 그래서 오늘 이 자리에서도 그 웃음들을 다시 한 번 느껴보고 싶어. 그리고 이제는
+  배우자랑 새로운 집에서 새로운 삶을 시작하게 될 텐데, 그 안에서도 항상 밝고 긍정적인 모습 잃지
+  않았으면 좋겠어. 물론 나도 옆에서 많이 도와줄게! 마지막으로, 너와 함께하는 모든
+  순간들이 언제나 축복으로 가득하길 바랄게. 사랑한다 ${answerList.relationship}! 잘살아!
+`;
 
   return (
     <div className="h-screen bg-slate-100">
@@ -67,10 +77,10 @@ const ResultPage = () => {
           </div>
           <div className="w-[327px] rounded-[10px] border border-solid border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] via-transparent to-[rgba(255,255,255,0.52)] px-[26px] py-[29px] pt-[29px] backdrop-blur-[10px]">
             <span className="font-Pretendard text-[15px] leading-[170%] tracking-[-0.6px] text-gray600">
-              {result.result}
+              {speechContent}
             </span>
             <CopyToClipboard
-              text="복사확인"
+              text={speechContent}
               onCopy={() =>
                 Toast.fire({
                   icon: 'success',

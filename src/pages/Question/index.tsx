@@ -52,12 +52,9 @@ const QuestionPage = () => {
     'lastComment',
   ];
 
-  useEffect(() => {
-    console.log(answerList);
-  }, [answerList]);
+  useEffect(() => {}, [answerList]);
 
   const handleClick = async (value: any) => {
-    let result;
     const currentType = questionList[currentPage - 1].type;
     const currentKey = answerListKeysOrder[currentPage - 1];
 
@@ -66,34 +63,15 @@ const QuestionPage = () => {
         ...prevAnswerList,
         [currentKey]: currentType === 'input' || currentType === 'textarea' ? input : value,
       };
-      console.log(answerList);
       return updatedAnswerList;
     });
 
-    console.log(answerList);
-
     if (currentPage === LAST_PAGE) {
       setIsLoading(true);
-      try {
-        const response = await fetch('http://115.85.180.119:8080/api/message', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-          },
-          body: JSON.stringify(answerList),
-        });
 
-        if (response.ok) {
-          result = await response.json();
-          console.log(result);
-          setIsLoading(false);
-        } else {
-          console.error('데이터 전송 실패:', response.statusText);
-        }
-      } catch (error) {
-        console.error('에러 발생:', error);
-      }
-      navigate('/result', { state: { result: result, name: answerList.userName } });
+      setTimeout(() => {
+        navigate('/result', { state: { answerList } });
+      }, 5000);
     } else {
       setCurrentPage((state) => state + 1);
       setInputCount(0);
