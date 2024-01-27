@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import ArrowIcon from 'assets/images/arrow.svg?react';
-import ResultIcon from 'assets/images/result-icon.svg?react';
+import ChevronIcon from 'assets/images/chevron-left.svg?react';
+import ResultAvatar from 'assets/images/result-avatar.svg?react';
 import { useLocation } from 'react-router-dom';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Swal from 'sweetalert2';
@@ -8,8 +8,8 @@ import { CAUTION_TEXT_CATEGORIES } from 'constants/index';
 
 const RESULT_TITLE = `${name}님을 위한\n축사가 도착했어요`;
 const CAUTION_TITLE = '축사를 읽을 때 이런 부분을\n조심해주세요';
-const COPY_BUTTON_TEXT = '축사 복사하기'
-const HOME_BUTTON_TEXT = '홈으로 가기'
+const COPY_BUTTON_TEXT = '축사 복사하기';
+const HOME_BUTTON_TEXT = '홈으로 가기';
 
 const ResultPage = () => {
   const Toast = Swal.mixin({
@@ -35,13 +35,13 @@ const ResultPage = () => {
       <div className="mx-auto  w-[375px] bg-white">
         <div className="bg-gradient bg-cover px-6 pb-10 ">
           <div className="flex h-16 w-full items-center justify-between">
-            <ArrowIcon />
+            <ChevronIcon />
           </div>
           <div className="mb-7 flex h-[68px] items-center justify-between">
             <span className="whitespace-pre-line font-Pretendard	text-2xl font-bold text-gray800">
               {RESULT_TITLE}
             </span>
-            <ResultIcon />
+            <ResultAvatar />
           </div>
           <div className="w-[327px] rounded-[10px] border border-solid border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] via-transparent to-[rgba(255,255,255,0.52)] px-[26px] py-[29px] pt-[29px] backdrop-blur-[10px]">
             <span className="font-Pretendard text-[15px] leading-[170%] tracking-[-0.6px] text-gray600">

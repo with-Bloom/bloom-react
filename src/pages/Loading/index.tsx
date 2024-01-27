@@ -1,7 +1,7 @@
-import LoadingCharactor from 'assets/images/loading-character.svg?react';
+import LoadingAvatar from 'assets/images/loading-avatar.svg?react';
 import { BeatLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
-import ArrowIcon from 'assets/images/arrow.svg?react';
+import ChevronIcon from 'assets/images/chevron-left.svg?react';
 import CloseIcon from 'assets/images/close.svg?react';
 import { CAUTION_TEXT_LIST } from 'constants/index';
 import { getRandomText } from 'utils/index';
@@ -15,7 +15,7 @@ const Loading = () => {
   return (
     <div className="flex h-full w-[375px] flex-col bg-white px-6">
       <div className="flex h-16 w-full items-center justify-between">
-        <ArrowIcon />
+        <ChevronIcon />
         <Link to={'/'}>
           <CloseIcon />
         </Link>
@@ -34,7 +34,7 @@ const Loading = () => {
         <span className="-[-0.6px]font-Pretendard whitespace-pre-line text-[15px] leading-[165%] text-gray600">
           {randomCautionText}
         </span>
-        <LoadingCharactor />
+        <LoadingAvatar />
       </div>
     </div>
   );
