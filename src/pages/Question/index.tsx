@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { QUESTION_LIST } from 'constants/index'; 
+import { QUESTION_LIST } from 'constants/index';
 import Layout from 'layout/index';
 import QuestionTitle from 'components/QuestionTitle';
 import Header from 'components/Header';
@@ -8,6 +8,7 @@ import SelectComponent from 'components/SelectComponent';
 import ProgressBar from 'components/ProgressBar';
 import NextButton from 'components/Button/NextButton';
 import Loading from 'pages/Loading';
+import { API_MESSAGE } from 'constants/path';
 
 type answerListType = {
   targetType: string;
@@ -75,7 +76,7 @@ const QuestionPage = () => {
     if (currentPage === LAST_PAGE) {
       setIsLoading(true);
       try {
-        const response = await fetch('http://115.85.180.119:8080/api/message', {
+        const response = await fetch(API_MESSAGE, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json;charset=utf-8',
