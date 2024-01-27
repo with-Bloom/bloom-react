@@ -53,9 +53,7 @@ const QuestionPage = () => {
     'lastComment',
   ];
 
-  useEffect(() => {
-    console.log(answerList);
-  }, [answerList]);
+  useEffect(() => {}, [answerList]);
 
   const handleClick = async (value: any) => {
     let result;
@@ -67,11 +65,8 @@ const QuestionPage = () => {
         ...prevAnswerList,
         [currentKey]: currentType === 'input' || currentType === 'textarea' ? input : value,
       };
-      console.log(answerList);
       return updatedAnswerList;
     });
-
-    console.log(answerList);
 
     if (currentPage === LAST_PAGE) {
       setIsLoading(true);

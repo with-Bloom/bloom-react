@@ -25,6 +25,7 @@ const ResultPage = () => {
   });
 
   const location = useLocation();
+  const answerList = location.state.answerList;
 
   const result = location.state.result;
   const name = location.state.name;
@@ -44,10 +45,10 @@ const ResultPage = () => {
           </div>
           <div className="w-[327px] rounded-[10px] border border-solid border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] via-transparent to-[rgba(255,255,255,0.52)] px-[26px] py-[29px] pt-[29px] backdrop-blur-[10px]">
             <span className="font-Pretendard text-[15px] leading-[170%] tracking-[-0.6px] text-gray600">
-              {result.result}
+              {speechContent}
             </span>
             <CopyToClipboard
-              text="복사확인"
+              text={speechContent}
               onCopy={() =>
                 Toast.fire({
                   icon: 'success',
