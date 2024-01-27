@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { questionList } from 'src/data/questionList';
+import { QUESTION_LIST } from 'constants/index'; 
 import Layout from 'layout/index';
 import QuestionTitle from 'components/QuestionTitle';
 import Header from 'components/Header';
@@ -58,7 +58,7 @@ const QuestionPage = () => {
 
   const handleClick = async (value: any) => {
     let result;
-    const currentType = questionList[currentPage - 1].type;
+    const currentType = QUESTION_LIST[currentPage - 1].type;
     const currentKey = answerListKeysOrder[currentPage - 1];
 
     setAnswerList((prevAnswerList) => {
@@ -114,7 +114,7 @@ const QuestionPage = () => {
             <Header />
             <ProgressBar currentPage={currentPage} />
           </div>
-          {questionList.map((el) => {
+          {QUESTION_LIST.map((el) => {
             return (
               currentPage === el.page && (
                 <div className="flex h-[calc(100vh-84px)] flex-col justify-between">
