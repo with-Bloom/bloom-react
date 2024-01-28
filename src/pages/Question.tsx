@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QUESTION_LIST } from 'constants/index';
-import Layout from 'layout/index';
-import QuestionTitle from 'components/QuestionTitle';
-import Header from 'components/Header';
+import Layout from 'components/common/Layout';
+import QuestionTitle from 'components/question/QuestionTitle';
+import Header from 'components/common/Header';
 import SelectComponent from 'components/SelectComponent';
-import ProgressBar from 'components/ProgressBar';
-import NextButton from 'components/Button/NextButton';
+import ProgressBar from 'components/question/ProgressBar';
+import NextButton from 'components/common/NextButton';
 import Loading from 'pages/Loading';
 import { API_MESSAGE } from 'constants/path';
 

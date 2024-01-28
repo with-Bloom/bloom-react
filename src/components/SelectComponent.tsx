@@ -1,8 +1,8 @@
-import Input from 'components/Input';
-import ImageCardButton from 'components/Button/ImageCardButton';
-import ImageButton from 'components/Button/ImageButton';
-import PrimaryButton from 'components/Button/PrimaryButton';
-import Textarea from 'components/Textarea';
+import Input from 'components/question/type/Input';
+import ImageCardButton from 'components/question/type/ImageCardButton';
+import ImageButton from 'components/question/type/ImageButton';
+import PrimaryButton from 'components/question/type/PrimaryButton';
+import Textarea from 'components/question/type/Textarea';
 
 type imageButtonProps = {
   target: string;

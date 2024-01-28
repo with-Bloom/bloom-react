@@ -16,8 +16,8 @@ export const QUESTION_LIST = [
     question: '축사를 받을 사람은\n신랑인가요, 신부인가요?',
     type: 'image-card-button',
     options: [
-      { target: '신랑', color: '#AEC9FF' },
-      { target: '신부', color: '#FB5500' },
+      { label: '신랑', fill: '#AEC9FF' },
+      { label: '신부', fill: '#FB5500' },
     ],
   },
   {
@@ -25,12 +25,12 @@ export const QUESTION_LIST = [
     question: '축사를 받는 사람을\n뭐라고 부르면 좋을까요?',
     type: 'image-button',
     options: [
-      { target: '친구', color: '#C9F4B4' },
-      { target: '오빠', color: '#D6E3FF' },
-      { target: '언니', color: '#F96E47' },
-      { target: '동생', color: '#D1CEFF' },
-      { target: '형', color: '#AEC9FF' },
-      { target: '누나', color: '#E991FB' },
+      { label: '친구', fill: '#C9F4B4' },
+      { label: '오빠', fill: '#D6E3FF' },
+      { label: '언니', fill: '#F96E47' },
+      { label: '동생', fill: '#D1CEFF' },
+      { label: '형', fill: '#AEC9FF' },
+      { label: '누나', fill: '#E991FB' },
     ],
   },
   {
