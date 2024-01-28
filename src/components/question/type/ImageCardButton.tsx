@@ -1,8 +1,8 @@
 import FlowerIcon from 'assets/images/flower.svg?react';
 
 type Option = {
-  target: string;
-  color: string;
+  label: string;
+  fill: string;
 };
 
 type Props = {
@@ -16,12 +16,12 @@ const ImageCardButton = ({ options, onClick }: Props) => {
       {options.map((el) => {
         return (
           <button
-            key={el.target}
+            key={el.label}
             className="custom-hover flex h-[187px] w-[158px] flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-Pretendard"
-            onClick={() => onClick(el.target)}
+            onClick={() => onClick(el.label)}
           >
-            <FlowerIcon fill={el.color} />
-            <span className="mt-2 font-Pretendard text-[17px]">{el.target}</span>
+            <FlowerIcon fill={el.fill} />
+            <span className="mt-2 font-Pretendard text-[17px]">{el.label}</span>
           </button>
         );
       })}

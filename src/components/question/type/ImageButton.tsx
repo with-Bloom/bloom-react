@@ -1,8 +1,8 @@
 import CloudIcon from 'assets/images/cloud.svg?react';
 
 type Option = {
-  target: string;
-  color: string;
+  label: string;
+  fill: string;
 };
 
 type Props = {
@@ -15,13 +15,13 @@ const ImageButton = ({ options, onClick }: Props) => {
     <ul className="grid grid-cols-4 grid-rows-2 gap-x-4 gap-y-7">
       {options.map((el) => {
         return (
-          <div key={el.target} className="flex flex-col items-center gap-[9px]">
+          <div key={el.label} className="flex flex-col items-center gap-[9px]">
             <CloudIcon
               className="cursor-pointer hover:fill-indigo"
-              onClick={() => onClick(el.target)}
-              fill={el.color}
+              onClick={() => onClick(el.label)}
+              fill={el.fill}
             />
-            <span className="font-Pretendard text-sm text-gray500">{el.target}</span>
+            <span className="font-Pretendard text-sm text-gray500">{el.label}</span>
           </div>
         );
       })}
