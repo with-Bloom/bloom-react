@@ -112,9 +112,9 @@ const QuestionPage = () => {
           </div>
           {QUESTION_LIST.map((el) => {
             return (
-              currentPage === el.page && (
+              currentPage === el.id && (
                 <div className="flex h-[calc(100vh-84px)] flex-col justify-between">
-                  <div key={el.page}>
+                  <div key={el.id}>
                     <QuestionTitle>{el.question}</QuestionTitle>
                     {SelectComponent({
                       type: el.type,
@@ -126,7 +126,7 @@ const QuestionPage = () => {
                   </div>
                   {(el.type === 'input' || el.type === 'textarea') && (
                     <NextButton onClick={handleClick} disabled={inputCount === 0}>
-                      {el.page === LAST_PAGE ? '내 축사 확인하기' : '다음'}
+                      {el.id === LAST_PAGE ? '내 축사 확인하기' : '다음'}
                     </NextButton>
                   )}
                 </div>

@@ -1,18 +1,24 @@
 import Input from 'components/question/type/Input';
-import ImageCardButton from 'components/question/type/ImageCardButton';
-import ImageButton from 'components/question/type/ImageButton';
+import AvatarCard from 'components/question/type/AvatarCard';
+import AvatarButton from 'components/question/type/AvatarButton';
 import PrimaryButton from 'components/question/type/PrimaryButton';
 import Textarea from 'components/question/type/Textarea';
 
-type imageButtonProps = {
-  target: string;
-  color: string;
+type PrimaryButton = {
+  id: number;
+  value: string;
+};
+
+type Avatar = {
+  id: number;
+  value: string;
+  fill: string;
 };
 
 type Props = {
-  type: string;
-  options: string | string[] | imageButtonProps[];
-  onClick: any;
+  type: 'input' | 'avatar-card' | 'avatar-button' | 'primary-button' | 'textarea';
+  options: string | Avatar[] | PrimaryButton[];
+  onClick?: React.MouseEventHandler<SVGSVGElement> | React.MouseEventHandler<HTMLButtonElement> | undefined;
   onChange?: React.ChangeEventHandler<HTMLElement> | undefined;
   count?: number;
 };
@@ -20,15 +26,35 @@ type Props = {
 const SelectComponent: React.FC<Props> = ({ type, options, onClick, onChange, count }: Props) => {
   switch (type) {
     case 'input':
-      return <Input placeholder={options as string} onChange={onChange} />;
-    case 'image-card-button':
-      return <ImageCardButton options={options as imageButtonProps[]} onClick={onClick} />;
-    case 'image-button':
-      return <ImageButton options={options as imageButtonProps[]} onClick={onClick} />;
+      return <Input options={options as string} onChange={onChange} />;
+
+    case 'avatar-card':
+      return (
+        <AvatarCard
+          options={options as Avatar[]}
+          onClick={onClick as React.MouseEventHandler<HTMLButtonElement>}
+        />
+      );
+
+    case 'avatar-button':
+      return (
+        <AvatarButton
+          options={options as Avatar[]}
+          onClick={onClick as React.MouseEventHandler<SVGSVGElement>}
+        />
+      );
+
     case 'primary-button':
-      return <PrimaryButton options={options as string[]} onClick={onClick} />;
+      return (
+        <PrimaryButton
+          options={options as PrimaryButton[]}
+          onClick={onClick as React.MouseEventHandler<HTMLButtonElement>}
+        />
+      );
+
     case 'textarea':
-      return <Textarea placeholder={options as string} onChange={onChange} count={count || 0} />;
+      return <Textarea options={options as string} onChange={onChange} count={count || 0} />;
+
     default:
       return null;
   }
