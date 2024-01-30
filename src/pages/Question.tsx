@@ -11,15 +11,15 @@ import Loading from 'pages/Loading';
 import { API_MESSAGE } from 'constants/path';
 
 type answerListType = {
-  targetType: string;
-  targetName: string;
-  relationship: string;
   userName: string;
+  targetName: string;
+  targetType: string;
+  relationship: string;
+  minute: number;
+  speechType: string;
   concept: string;
   story: string;
-  speechType: string;
   lastComment: string;
-  minute: number;
 };
 
 const QuestionPage = () => {
