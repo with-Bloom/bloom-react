@@ -5,8 +5,10 @@
       "assets/*": ["src/assets/*"],
       "components/*": ["src/components/*"],
       "constants/*": ["src/constants/*"],
+      "hooks/*": ["src/hooks/*"],
       "layout/*": ["src/layout/*"],
       "pages/*": ["src/pages/*"],
+      "types/*": ["src/types/*"],
       "utils/*": ["src/utils/*"]
     },
     "target": "ES2020",
