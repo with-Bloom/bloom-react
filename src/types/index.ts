@@ -8,4 +8,5 @@ export type UserAnswer = {
   concept: string;
   story: string;
   lastComment: string;
+  isRenew: boolean;
 };
