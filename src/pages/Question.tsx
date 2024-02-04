@@ -9,16 +9,16 @@ import ProgressBar from 'components/question/ProgressBar';
 import NextButton from 'components/common/NextButton';
 import Loading from 'pages/Loading';
 import { API_MESSAGE } from 'constants/path';
-import getResponseData from 'hooks/getResponseData';
+import useFetch from 'hooks/useFetch';
 import { UserAnswer } from 'types/index';
 
+const LAST_PAGE = 9;
+
 const QuestionPage = () => {
-  const LAST_PAGE = 9;
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [inputCount, setInputCount] = useState<number>(0);
   const [input, setInput] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [userAnswer, setUserAnswer] = useState<UserAnswer>({
     userName: '',
     targetName: '',
@@ -29,7 +29,10 @@ const QuestionPage = () => {
     concept: '',
     story: '',
     lastComment: '',
+    isRenew: false,
   });
+  
+  const { fetchData, data, loading } = useFetch(API_MESSAGE, userAnswer);
 
   const answerListKeysOrder = [
     'userName',
@@ -56,9 +59,9 @@ const QuestionPage = () => {
     });
 
     if (currentPage === LAST_PAGE) {
-      setIsLoading(true);
-      const result = getResponseData(API_MESSAGE, userAnswer)
-      navigate('/result', { state: { result: result, name: userAnswer.userName } });
+      console.log(currentPage)
+      fetchData()
+      navigate('/result', { state: { data, name: userAnswer.userName } });
     } else {
       setCurrentPage((state) => state + 1);
       setInputCount(0);
@@ -73,7 +76,7 @@ const QuestionPage = () => {
   return (
     <>
       <Layout>
-        {isLoading && <Loading />}
+        {loading && <Loading />}
         <div className="flex h-full flex-col justify-between px-6 pb-10">
           <div>
             <Header />
