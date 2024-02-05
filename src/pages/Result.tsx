@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ChevronIcon from 'assets/images/chevron-left.svg?react';
 import ResultAvatar from 'assets/images/result-avatar.svg?react';
-import { useLocation } from 'react-router-dom';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Swal from 'sweetalert2';
 import { CAUTION_TEXT_CATEGORIES } from 'constants/index';
 
-const RESULT_TITLE = `${name}님을 위한\n축사가 도착했어요`;
 const CAUTION_TITLE = '축사를 읽을 때 이런 부분을\n조심해주세요';
 const COPY_BUTTON_TEXT = '축사 복사하기';
 const HOME_BUTTON_TEXT = '홈으로 가기';
@@ -25,10 +23,9 @@ const ResultPage = () => {
   });
 
   const location = useLocation();
-  const answerList = location.state.answerList;
-
-  const result = location.state.result;
+  const result = location.state.data;
   const name = location.state.name;
+  const RESULT_TITLE = `${name}님을 위한\n축사가 도착했어요`;
 
   return (
     <div className="h-screen bg-slate-100">
@@ -45,10 +42,10 @@ const ResultPage = () => {
           </div>
           <div className="w-[327px] rounded-[10px] border border-solid border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] via-transparent to-[rgba(255,255,255,0.52)] px-[26px] py-[29px] pt-[29px] backdrop-blur-[10px]">
             <span className="font-Pretendard text-[15px] leading-[170%] tracking-[-0.6px] text-gray600">
-              {speechContent}
+              {result}
             </span>
             <CopyToClipboard
-              text={speechContent}
+              text={result}
               onCopy={() =>
                 Toast.fire({
                   icon: 'success',

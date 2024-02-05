@@ -16,7 +16,7 @@ type Avatar = {
 };
 
 type Props = {
-  type: 'input' | 'avatar-card' | 'avatar-button' | 'primary-button' | 'textarea';
+  type: 'input' | 'avatar-card' | 'avatar-button' | 'primary-button' | 'textarea' | string;
   options: string | Avatar[] | PrimaryButton[];
   onClick?: React.MouseEventHandler<SVGSVGElement> | React.MouseEventHandler<HTMLButtonElement> | undefined;
   onChange?: React.ChangeEventHandler<HTMLElement> | undefined;
