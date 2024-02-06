@@ -6,11 +6,11 @@ import QuestionTitle from 'components/question/QuestionTitle';
 import Header from 'components/common/Header';
 import SelectComponent from 'components/SelectComponent';
 import ProgressBar from 'components/question/ProgressBar';
-import NextButton from 'components/common/NextButton';
 import Loading from 'pages/Loading';
 import { API_MESSAGE } from 'constants/path';
 import useFetch from 'hooks/useFetch';
 import { UserAnswer } from 'types/index';
+import Button from 'components/common/Button';
 
 const LAST_PAGE = 9;
 
@@ -31,7 +31,7 @@ const QuestionPage = () => {
     lastComment: '',
     isRenew: false,
   });
-  
+
   const { fetchData, data, loading } = useFetch(API_MESSAGE, userAnswer);
 
   const answerListKeysOrder = [
@@ -46,6 +46,10 @@ const QuestionPage = () => {
     'lastComment',
   ];
 
+  const handleNext = () => {
+    setCurrentPage((prev) => prev + 1);
+  };
+
   const handleClick = async (value: any) => {
     const currentType = QUESTION_LIST[currentPage - 1].type;
     const currentKey = answerListKeysOrder[currentPage - 1];
@@ -59,8 +63,8 @@ const QuestionPage = () => {
     });
 
     if (currentPage === LAST_PAGE) {
-      console.log(currentPage)
-      fetchData()
+      console.log(currentPage);
+      fetchData();
       navigate('/result', { state: { data, name: userAnswer.userName } });
     } else {
       setCurrentPage((state) => state + 1);
@@ -97,9 +101,9 @@ const QuestionPage = () => {
                     })}
                   </div>
                   {(type === 'input' || type === 'textarea') && (
-                    <NextButton onClick={handleClick} disabled={inputCount === 0}>
-                      {id === LAST_PAGE ? '내 축사 확인하기' : '다음'}
-                    </NextButton>
+                    <Button onClick={handleNext} disabled={inputCount === 0}>
+                      다음
+                    </Button>
                   )}
                 </div>
               )

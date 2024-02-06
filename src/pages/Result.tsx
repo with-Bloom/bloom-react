@@ -4,6 +4,7 @@ import ResultAvatar from 'assets/images/result-avatar.svg?react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Swal from 'sweetalert2';
 import { CAUTION_TEXT_CATEGORIES } from 'constants/index';
+import Button from 'components/common/Button';
 
 const CAUTION_TITLE = '축사를 읽을 때 이런 부분을\n조심해주세요';
 const COPY_BUTTON_TEXT = '축사 복사하기';
@@ -54,9 +55,7 @@ const ResultPage = () => {
                 })
               }
             >
-              <button className="mt-[57px] flex h-[55px] w-[275px] items-center justify-center rounded-[10px] bg-gray700 font-Pretendard text-[17px] font-bold text-white">
-                {COPY_BUTTON_TEXT}
-              </button>
+              <Button>{COPY_BUTTON_TEXT}</Button>
             </CopyToClipboard>
           </div>
         </div>

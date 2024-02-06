@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Layout from 'components/common/Layout';
 import HomeAvatar from 'assets/images/home-avatar.svg?react';
 import Logo from 'assets/images/logo.svg?react';
+import Button from 'components/common/Button';
 
 const TITLE = '막막한 축사 준비를 손쉽게';
 const SUB_TITLE = '소중한 사람의 축복을 위한 결혼식 축사,\n진심을 전할 수 있도록 블룸이 도와드릴게요.';
@@ -22,9 +23,7 @@ const HomePage = () => {
           </span>
         </div>
         <Link to={'/question'}>
-          <div className="flex h-[55px] w-[327px] items-center justify-center rounded-[10px] bg-gray700 font-Pretendard text-[17px] font-bold text-white">
-            {BUTTON_TEXT}
-          </div>
+          <Button>{BUTTON_TEXT}</Button>
         </Link>
       </div>
     </Layout>
