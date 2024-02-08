@@ -8,12 +8,11 @@ import { API_MESSAGE } from 'constants/path';
 
 import useFetch from 'hooks/useFetch';
 
-import Loading from 'pages/Loading';
-
 import SelectComponent from 'components/SelectComponent';
 import Button from 'components/common/Button';
 import Header from 'components/common/Header';
 import Layout from 'components/common/Layout';
+import Loading from 'components/common/Loading';
 import ProgressBar from 'components/question/ProgressBar';
 import QuestionTitle from 'components/question/QuestionTitle';
 
