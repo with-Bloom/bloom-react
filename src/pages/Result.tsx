@@ -1,10 +1,14 @@
+import Swal from 'sweetalert2';
+
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Link, useLocation } from 'react-router-dom';
+
+import { CAUTION_TEXT_CATEGORIES } from 'constants/index';
+
+import Button from 'components/common/Button';
+
 import ChevronIcon from 'assets/images/chevron-left.svg?react';
 import ResultAvatar from 'assets/images/result-avatar.svg?react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Swal from 'sweetalert2';
-import { CAUTION_TEXT_CATEGORIES } from 'constants/index';
-import Button from 'components/common/Button';
 
 const CAUTION_TITLE = '축사를 읽을 때 이런 부분을\n조심해주세요';
 const COPY_BUTTON_TEXT = '축사 복사하기';

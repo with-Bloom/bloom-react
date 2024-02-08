@@ -1,10 +1,13 @@
-import LoadingAvatar from 'assets/images/loading-avatar.svg?react';
-import { BeatLoader } from 'react-spinners';
+import { getRandomText } from 'utils/index';
+
 import { Link } from 'react-router-dom';
+import { BeatLoader } from 'react-spinners';
+
+import { CAUTION_TEXT_LIST } from 'constants/index';
+
 import ChevronIcon from 'assets/images/chevron-left.svg?react';
 import CloseIcon from 'assets/images/close.svg?react';
-import { CAUTION_TEXT_LIST } from 'constants/index';
-import { getRandomText } from 'utils/index';
+import LoadingAvatar from 'assets/images/loading-avatar.svg?react';
 
 const TITLE = '축사를 작성하고 있어요!';
 const SUB_TITLE = '잠시만 기다려 주세요';

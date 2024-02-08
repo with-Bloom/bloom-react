@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { UserAnswer } from 'types/index';
 
 type ApiResponse = {
   messageId: string;
   resultData: string;
-}
+};
 
 type UseFetchResponse = {
   fetchData: () => Promise<void>;
@@ -37,8 +38,7 @@ const useFetch = (url: string, body: UserAnswer): UseFetchResponse => {
     }
   };
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
   return { fetchData, data, loading };
 };
 
