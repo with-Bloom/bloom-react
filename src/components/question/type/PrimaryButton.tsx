@@ -7,7 +7,8 @@ type Options = {
 
 type Props = {
   options: Options[];
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  // eslint-disable-next-line no-unused-vars
+  onClick: (value: string) => void;
 };
 
 const TOOLTIP_TEXT = '3~4분 길이의 축사가 가장 많아요!';
@@ -21,7 +22,7 @@ const PrimaryButton = ({ options, onClick }: Props) => {
             className={`custom-hover flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-Pretendard text-gray700 ${
               value === '3분' ? 'relative' : ''
             }`}
-            onClick={onClick}
+            onClick={() => onClick(value)}
           >
             {value}
           </button>

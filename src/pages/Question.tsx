@@ -9,7 +9,6 @@ import { API_MESSAGE } from 'constants/path';
 import useFetch from 'hooks/useFetch';
 
 import SelectComponent from 'components/SelectComponent';
-import Button from 'components/common/Button';
 import Header from 'components/common/Header';
 import Layout from 'components/common/Layout';
 import Loading from 'components/common/Loading';
@@ -21,8 +20,6 @@ const LAST_PAGE = 9;
 const QuestionPage = () => {
   const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [inputCount, setInputCount] = useState<number>(0);
-  const [input, setInput] = useState<string>('');
   const [userAnswer, setUserAnswer] = useState<UserAnswer>({
     userName: '',
     targetName: '',
@@ -50,18 +47,13 @@ const QuestionPage = () => {
     'lastComment',
   ];
 
-  const handleNext = () => {
-    setCurrentPage((prev) => prev + 1);
-  };
-
-  const handleClick = async (value: any) => {
-    const currentType = QUESTION_LIST[currentPage - 1].type;
+  const handleClick = async (value: string) => {
     const currentKey = answerListKeysOrder[currentPage - 1];
 
     setUserAnswer((prevAnswerList) => {
       const updatedAnswerList = {
         ...prevAnswerList,
-        [currentKey]: currentType === 'input' || currentType === 'textarea' ? input : value,
+        [currentKey]: value,
       };
       return updatedAnswerList;
     });
@@ -72,13 +64,7 @@ const QuestionPage = () => {
       navigate('/result', { state: { data, name: userAnswer.userName } });
     } else {
       setCurrentPage((state) => state + 1);
-      setInputCount(0);
     }
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setInputCount(e.target.value.length);
-    setInput(e.target.value);
   };
 
   return (
@@ -98,15 +84,8 @@ const QuestionPage = () => {
                   type: type,
                   options: options,
                   onClick: handleClick,
-                  onChange: handleInputChange,
-                  count: inputCount,
                 })}
               </div>
-              {(type === 'input' || type === 'textarea') && (
-                <Button onClick={handleNext} disabled={inputCount === 0}>
-                  다음
-                </Button>
-              )}
             </div>
           )
         );

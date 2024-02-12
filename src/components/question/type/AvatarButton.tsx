@@ -8,7 +8,8 @@ type Options = {
 
 type Props = {
   options: Options[];
-  onClick: React.MouseEventHandler<SVGSVGElement>;
+  // eslint-disable-next-line no-unused-vars
+  onClick: (value: string) => void;
 };
 
 const AvatarButton = ({ options, onClick }: Props) => {
@@ -17,8 +18,12 @@ const AvatarButton = ({ options, onClick }: Props) => {
       {options.map(({ id, value, fill }) => {
         return (
           <div key={id} className="flex flex-col items-center gap-[9px]">
-            <CloudIcon className="cursor-pointer hover:fill-indigo" onClick={onClick} fill={fill} />
-            <span className="font-Pretendard text-sm text-gray500">{value}</span>
+            <CloudIcon
+              className="cursor-pointer hover:fill-indigo"
+              onClick={() => onClick(value)}
+              fill={fill}
+            />
+            <span className="text-sm font-Pretendard text-gray500">{value}</span>
           </div>
         );
       })}

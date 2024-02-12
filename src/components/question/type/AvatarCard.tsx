@@ -8,7 +8,8 @@ type Options = {
 
 type Props = {
   options: Options[];
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+    // eslint-disable-next-line no-unused-vars
+  onClick: (value: string) => void;
 };
 
 const AvatarCard = ({ options, onClick }: Props) => {
@@ -19,7 +20,7 @@ const AvatarCard = ({ options, onClick }: Props) => {
           <button
             key={id}
             className="custom-hover flex h-[187px] w-[158px] flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-Pretendard"
-            onClick={onClick}
+            onClick={() => onClick(value)}
           >
             <FlowerIcon fill={fill} />
             <span className="mt-2 font-Pretendard text-[17px]">{value}</span>
