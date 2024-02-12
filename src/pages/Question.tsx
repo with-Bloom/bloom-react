@@ -82,40 +82,36 @@ const QuestionPage = () => {
   };
 
   return (
-    <>
-      <Layout>
-        {loading && <Loading />}
-        <div className="flex h-full flex-col justify-between px-6 pb-10">
-          <div>
-            <Header />
-            <ProgressBar currentPage={currentPage} />
-          </div>
-          {QUESTION_LIST.map(({ id, question, type, options }) => {
-            return (
-              currentPage === id && (
-                <div className="flex h-[calc(100vh-84px)] flex-col justify-between">
-                  <div key={id}>
-                    <QuestionTitle>{question}</QuestionTitle>
-                    {SelectComponent({
-                      type: type,
-                      options: options,
-                      onClick: handleClick,
-                      onChange: handleInputChange,
-                      count: inputCount,
-                    })}
-                  </div>
-                  {(type === 'input' || type === 'textarea') && (
-                    <Button onClick={handleNext} disabled={inputCount === 0}>
-                      다음
-                    </Button>
-                  )}
-                </div>
-              )
-            );
-          })}
-        </div>
-      </Layout>
-    </>
+    <Layout>
+      {loading && <Loading />}
+      <div>
+        <Header />
+        <ProgressBar currentPage={currentPage} />
+      </div>
+      {QUESTION_LIST.map(({ id, question, type, options }) => {
+        return (
+          currentPage === id && (
+            <div className="flex h-[calc(100vh-84px)] flex-col justify-between">
+              <div key={id}>
+                <QuestionTitle>{question}</QuestionTitle>
+                {SelectComponent({
+                  type: type,
+                  options: options,
+                  onClick: handleClick,
+                  onChange: handleInputChange,
+                  count: inputCount,
+                })}
+              </div>
+              {(type === 'input' || type === 'textarea') && (
+                <Button onClick={handleNext} disabled={inputCount === 0}>
+                  다음
+                </Button>
+              )}
+            </div>
+          )
+        );
+      })}
+    </Layout>
   );
 };
 

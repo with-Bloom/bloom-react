@@ -17,7 +17,7 @@ const Loading = () => {
 
   return (
     <div className="flex h-full w-[375px] flex-col bg-white px-6">
-      <div className="flex h-16 w-full items-center justify-between">
+      <div className="flex items-center justify-between w-full h-16">
         <ChevronIcon />
         <Link to={'/'}>
           <CloseIcon />
