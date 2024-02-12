@@ -35,12 +35,12 @@ const ResultPage = () => {
   return (
     <div className="h-screen bg-slate-100">
       <div className="mx-auto  w-[375px] bg-white">
-        <div className="bg-gradient bg-cover px-6 pb-10 ">
-          <div className="flex h-16 w-full items-center justify-between">
+        <div className="px-6 pb-10 bg-cover bg-gradient ">
+          <div className="flex items-center justify-between w-full h-16">
             <ChevronIcon />
           </div>
           <div className="mb-7 flex h-[68px] items-center justify-between">
-            <span className="whitespace-pre-line font-Pretendard	text-2xl font-bold text-gray800">
+            <span className="text-2xl font-bold whitespace-pre-line font-Pretendard text-gray800">
               {RESULT_TITLE}
             </span>
             <ResultAvatar />
@@ -59,7 +59,7 @@ const ResultPage = () => {
                 })
               }
             >
-              <Button>{COPY_BUTTON_TEXT}</Button>
+              <Button size="small">{COPY_BUTTON_TEXT}</Button>
             </CopyToClipboard>
           </div>
         </div>
@@ -70,7 +70,7 @@ const ResultPage = () => {
           {CAUTION_TEXT_CATEGORIES.map((el, index) => (
             <div key={index} className="mb-4 w-[327px] rounded-[10px] bg-gray900 px-4 py-[29px] opacity-70">
               <div className="mb-[6px] font-Pretendard text-base font-bold text-black">{el.title}</div>
-              <ul className="list-disc pl-4">
+              <ul className="pl-4 list-disc">
                 {el.description.map((desc, descIndex) => (
                   <li key={descIndex} className="mt-[12px] text-[14px] leading-[163%] tracking-[-0.5px]">
                     {desc}
@@ -81,9 +81,7 @@ const ResultPage = () => {
           ))}
 
           <Link to={'/'}>
-            <button className="mt-[28px] flex h-[55px] w-[327px] items-center justify-center rounded-[10px] bg-gray700 font-Pretendard text-[17px] font-bold text-white">
-              {HOME_BUTTON_TEXT}
-            </button>
+            <Button>{HOME_BUTTON_TEXT}</Button>
           </Link>
         </div>
       </div>
