@@ -12,6 +12,7 @@
     "^react(.*)",
     "^types/(.*)$",
     "^constants",
+    "^context/(.*)$",
     "^hooks/(.*)$",
     "^@utils/(.*)$",
     "^pages/(.*)$",
