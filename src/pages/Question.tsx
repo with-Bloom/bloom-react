@@ -77,9 +77,9 @@ const QuestionPage = () => {
       {QUESTION_LIST.map(({ id, question, type, options }) => {
         return (
           currentPage === id && (
-            <div className="flex h-[calc(100vh-84px)] flex-col justify-between">
-              <div key={id}>
-                <QuestionTitle>{question}</QuestionTitle>
+            <div key={id}>
+              <QuestionTitle>{question}</QuestionTitle>
+              <div className="flex h-[calc(100vh-273px)] flex-col justify-between">
                 {SelectComponent({
                   type: type,
                   options: options,
