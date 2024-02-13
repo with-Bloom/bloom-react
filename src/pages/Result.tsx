@@ -6,8 +6,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { CAUTION_TEXT_CATEGORIES } from 'constants/index';
 
 import Button from 'components/common/Button';
+import Header from 'components/common/Header';
 
-import ChevronIcon from 'assets/images/chevron-left.svg?react';
 import ResultAvatar from 'assets/images/result-avatar.svg?react';
 
 const CAUTION_TITLE = '축사를 읽을 때 이런 부분을\n조심해주세요';
@@ -36,9 +36,7 @@ const ResultPage = () => {
     <div className="h-screen bg-slate-100">
       <div className="mx-auto  w-[375px] bg-white">
         <div className="px-6 pb-10 bg-cover bg-gradient ">
-          <div className="flex items-center justify-between w-full h-16">
-            <ChevronIcon />
-          </div>
+          <Header noCloseBtn={true} />
           <div className="mb-7 flex h-[68px] items-center justify-between">
             <span className="text-2xl font-bold whitespace-pre-line font-Pretendard text-gray800">
               {RESULT_TITLE}
