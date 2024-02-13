@@ -3,14 +3,12 @@ import Swal from 'sweetalert2';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Link, useLocation } from 'react-router-dom';
 
-import { CAUTION_TEXT_CATEGORIES } from 'constants/index';
-
 import Button from 'components/common/Button';
 import Header from 'components/common/Header';
+import CautionList from 'components/result/CautionList';
 
 import ResultAvatar from 'assets/images/result-avatar.svg?react';
 
-const CAUTION_TITLE = '축사를 읽을 때 이런 부분을\n조심해주세요';
 const COPY_BUTTON_TEXT = '축사 복사하기';
 const HOME_BUTTON_TEXT = '홈으로 가기';
 
@@ -62,22 +60,7 @@ const ResultPage = () => {
           </div>
         </div>
         <div className="px-6 pb-10 pt-[62px]">
-          <div className="mb-[14px] whitespace-pre-line font-Pretendard text-[20px] font-bold leading-[28px] tracking-[-0.5px] text-gray800">
-            {CAUTION_TITLE}
-          </div>
-          {CAUTION_TEXT_CATEGORIES.map((el, index) => (
-            <div key={index} className="mb-4 w-[327px] rounded-[10px] bg-gray900 px-4 py-[29px] opacity-70">
-              <div className="mb-[6px] font-Pretendard text-base font-bold text-black">{el.title}</div>
-              <ul className="pl-4 list-disc">
-                {el.description.map((desc, descIndex) => (
-                  <li key={descIndex} className="mt-[12px] text-[14px] leading-[163%] tracking-[-0.5px]">
-                    {desc}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
+          <CautionList />
           <Link to={'/'}>
             <Button>{HOME_BUTTON_TEXT}</Button>
           </Link>
