@@ -3,7 +3,7 @@ import { getRandomText } from 'utils/index';
 import { Link } from 'react-router-dom';
 import { BeatLoader } from 'react-spinners';
 
-import { CAUTION_TEXT_LIST } from 'constants/index';
+import { CAUTION_LIST } from 'constants/index';
 
 import ChevronIcon from 'assets/images/chevron-left.svg?react';
 import CloseIcon from 'assets/images/close.svg?react';
@@ -13,7 +13,7 @@ const TITLE = '축사를 작성하고 있어요!';
 const SUB_TITLE = '잠시만 기다려 주세요';
 
 const Loading = () => {
-  const randomCautionText = getRandomText(CAUTION_TEXT_LIST);
+  const randomCaution = getRandomText(CAUTION_LIST);
 
   return (
     <div className="flex h-full w-[375px] flex-col bg-white px-6">
@@ -35,7 +35,7 @@ const Loading = () => {
 
       <div className="mt-6 flex h-[185px] w-[327px] justify-between rounded-xl bg-gray100 pl-4 pt-[30px] tracking-[-0.6px]">
         <span className="-[-0.6px]font-Pretendard whitespace-pre-line text-[15px] leading-[165%] text-gray600">
-          {randomCautionText}
+          {randomCaution}
         </span>
         <LoadingAvatar />
       </div>
