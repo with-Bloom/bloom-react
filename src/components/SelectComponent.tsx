@@ -18,7 +18,8 @@ type Avatar = {
 type Props = {
   type: 'input' | 'avatar-card' | 'avatar-button' | 'primary-button' | 'textarea' | string;
   options: string | Avatar[] | PrimaryButton[];
-  onClick: () => void;
+    // eslint-disable-next-line no-unused-vars
+  onClick:(value: string) => void; 
 };
 
 const SelectComponent = ({ type, options, onClick }: Props) => {
