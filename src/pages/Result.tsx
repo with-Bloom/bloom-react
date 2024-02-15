@@ -38,32 +38,39 @@ const ResultPage = () => {
 
   return (
     <Layout style="result">
-      <div className="px-6 bg-cover bg-gradient pb-9">
+      <div className="flex flex-col items-center px-6 bg-cover bg-gradient">
         <Header noCloseBtn={true} onClick={handleClick} />
-        <div className="mb-7 flex h-[68px] items-center justify-between">
+
+        <div className="mb-7 h-[68px] w-[327px] flex justify-between">
           <span className="text-2xl font-bold whitespace-pre-line font-Pretendard text-gray800">
             {RESULT_TITLE}
           </span>
           <ResultAvatar />
         </div>
-        <div className="w-[327px] rounded-[10px] border border-solid border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] via-transparent to-[rgba(255,255,255,0.52)] px-[26px] py-[29px] pt-[29px] backdrop-blur-[10px]">
+
+        <div className="mb-5 w-[327px] rounded-[10px] border border-opacity-30 border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] to-[rgba(255,255,255,0.52)] px-[26px] pb-[70px] pt-[29px] backdrop-blur-[10px]">
           <span className="font-Pretendard text-[15px] leading-[170%] tracking-[-0.6px] text-gray600">
             {result}
           </span>
-          <CopyToClipboard
-            text={result}
-            onCopy={() =>
-              Toast.fire({
-                icon: 'success',
-                title: '축사가 성공적으로 복사되었습니다!',
-                iconColor: '#7990F6',
-              })
-            }
-          >
-            <Button size="small">{COPY_BUTTON_TEXT}</Button>
-          </CopyToClipboard>
         </div>
+
+        <CopyToClipboard
+          text={result}
+          onCopy={() =>
+            Toast.fire({
+              icon: 'success',
+              title: '축사가 성공적으로 복사되었습니다!',
+              iconColor: '#7990F6',
+            })
+          }
+        >
+          <Button size="small">{COPY_BUTTON_TEXT}</Button>
+        </CopyToClipboard>
+        <span className="mt-[12px] mb-[45px] underline font-medium tracking-[-0.4px] text-sm text-gray1200 font-Pretendard">
+          축사 다시 받아보기
+        </span>
       </div>
+
       <div className="px-6 pb-10 pt-[62px] bg-white">
         <CautionList />
         <Link to={'/'}>

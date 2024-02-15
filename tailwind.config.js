@@ -15,6 +15,7 @@ export default {
         gray900: '#F5F7F9',
         gray1000: '#C8CED5',
         grat1100: '#464854',
+        gray1200: '#1D242F',
       },
       backgroundImage: {
         gradient: 'url("/images/bg_result.jpg")',
