@@ -1,5 +1,6 @@
 import { getRandomText } from 'utils/index';
 
+import { useNavigate } from 'react-router-dom';
 import { BeatLoader } from 'react-spinners';
 
 import { CAUTION_LIST } from 'constants/index';
@@ -14,9 +15,14 @@ const SUB_TITLE = '잠시만 기다려 주세요';
 const Loading = () => {
   const randomCaution = getRandomText(CAUTION_LIST);
 
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/question');
+  };
+
   return (
     <div>
-      <Header />
+      <Header onClick={handleClick} />
       <div className="flex flex-col gap-1.5">
         <div className="mt-[36px] flex items-center justify-between">
           <span className=" font-Pretendard text-[22px] font-bold tracking-[-0.5px] text-gray800">
