@@ -7,6 +7,7 @@ import { QUESTION_LIST } from 'constants/index';
 import { API_MESSAGE } from 'constants/path';
 
 import useFetch from 'hooks/useFetch';
+import usePageHistory from 'hooks/usePageHistory';
 
 import SelectComponent from 'components/SelectComponent';
 import Header from 'components/common/Header';
@@ -19,7 +20,7 @@ const LAST_PAGE = 9;
 
 const QuestionPage = () => {
   const navigate = useNavigate();
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, handlePrev, handleNext] = usePageHistory(1);
   const [userAnswer, setUserAnswer] = useState<UserAnswer>({
     userName: '',
     targetName: '',
@@ -59,38 +60,37 @@ const QuestionPage = () => {
     });
 
     if (currentPage === LAST_PAGE) {
-      console.log(currentPage);
-      fetchData();
+      await fetchData();
       navigate('/result', { state: { data, name: userAnswer.userName } });
     } else {
-      setCurrentPage((state) => state + 1);
+      handleNext();
     }
   };
 
   return (
-    <Layout>
-      {loading && <Loading />}
-      <div>
-        <Header />
-        <ProgressBar currentPage={currentPage} />
-      </div>
-      {QUESTION_LIST.map(({ id, question, type, options }) => {
-        return (
-          currentPage === id && (
-            <div key={id}>
-              <QuestionTitle>{question}</QuestionTitle>
-              <div className="flex h-[calc(100vh-273px)] flex-col justify-between">
-                {SelectComponent({
-                  type: type,
-                  options: options,
-                  onClick: handleClick,
-                })}
+      <Layout>
+{loading && <Loading />}
+        <div>
+          <Header onClick={handlePrev} />
+          <ProgressBar currentPage={currentPage} />
+        </div>
+        {QUESTION_LIST.map(({ id, question, type, options }) => {
+          return (
+            currentPage === id && (
+              <div key={id}>
+                <QuestionTitle>{question}</QuestionTitle>
+                <div className="flex h-[calc(100vh-273px)] flex-col justify-between">
+                  {SelectComponent({
+                    type: type,
+                    options: options,
+                    onClick: handleClick,
+                  })}
+                </div>
               </div>
-            </div>
-          )
-        );
-      })}
-    </Layout>
+            )
+          );
+        })}
+      </Layout>
   );
 };
 
