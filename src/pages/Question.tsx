@@ -68,29 +68,32 @@ const QuestionPage = () => {
   };
 
   return (
-      <Layout>
-{loading && <Loading />}
-        <div>
+    <Layout>
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
           <Header onClick={handlePrev} />
           <ProgressBar currentPage={currentPage} />
-        </div>
-        {QUESTION_LIST.map(({ id, question, type, options }) => {
-          return (
-            currentPage === id && (
-              <div key={id}>
-                <QuestionTitle>{question}</QuestionTitle>
-                <div className="flex h-[calc(100vh-273px)] flex-col justify-between">
-                  {SelectComponent({
-                    type: type,
-                    options: options,
-                    onClick: handleClick,
-                  })}
+          {QUESTION_LIST.map(({ id, question, type, options }) => {
+            return (
+              currentPage === id && (
+                <div key={id}>
+                  <QuestionTitle>{question}</QuestionTitle>
+                  <div className="flex h-[calc(100vh-273px)] flex-col justify-between">
+                    {SelectComponent({
+                      type: type,
+                      options: options,
+                      onClick: handleClick,
+                    })}
+                  </div>
                 </div>
-              </div>
-            )
-          );
-        })}
-      </Layout>
+              )
+            );
+          })}
+        </>
+      )}
+    </Layout>
   );
 };
 
