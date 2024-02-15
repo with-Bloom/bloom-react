@@ -34,7 +34,7 @@ const QuestionPage = () => {
     isRenew: false,
   });
 
-  const { fetchData, data, loading } = useFetch(API_MESSAGE, userAnswer);
+  const { fetchData, isLoading } = useFetch(API_MESSAGE, userAnswer);
 
   const answerListKeysOrder = [
     'userName',
@@ -60,7 +60,7 @@ const QuestionPage = () => {
     });
 
     if (currentPage === LAST_PAGE) {
-      await fetchData();
+      const data = await fetchData();
       navigate('/result', { state: { data, name: userAnswer.userName } });
     } else {
       handleNext();
@@ -69,7 +69,7 @@ const QuestionPage = () => {
 
   return (
     <Layout>
-      {loading ? (
+      {isLoading ? (
         <Loading />
       ) : (
         <>
