@@ -64,7 +64,7 @@ const ResultPage = () => {
             })
           }
         >
-          <Button size="small">{COPY_BUTTON_TEXT}</Button>
+          <Button>{COPY_BUTTON_TEXT}</Button>
         </CopyToClipboard>
         <span className="mt-[12px] mb-[45px] underline font-medium tracking-[-0.4px] text-sm text-gray600 font-pretendard">
           축사 다시 받아보기
