@@ -8,7 +8,7 @@ type Options = {
 
 type Props = {
   options: Options[];
-    // eslint-disable-next-line no-unused-vars
+  // eslint-disable-next-line no-unused-vars
   onClick: (value: string) => void;
 };
 
@@ -19,11 +19,11 @@ const AvatarCard = ({ options, onClick }: Props) => {
         return (
           <button
             key={id}
-            className="custom-hover flex h-[187px] w-[158px] flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-Pretendard"
+            className="custom-hover flex h-[187px] w-[158px] flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-pretendard"
             onClick={() => onClick(value)}
           >
             <FlowerIcon fill={fill} />
-            <span className="mt-2 font-Pretendard text-[17px]">{value}</span>
+            <span className="mt-2 font-pretendard text-[17px]">{value}</span>
           </button>
         );
       })}

@@ -17,7 +17,7 @@ const Button = ({ children, onClick, disabled, size = 'medium' }: Props) => {
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`${buttonWidthSize} flex h-[55px] items-center justify-center rounded-[10px] bg-gray700 font-Pretendard text-[17px] font-bold text-white disabled:bg-gray-400`}
+      className={`${buttonWidthSize} flex h-[55px] items-center justify-center rounded-[10px] bg-gray1000 font-pretendard text-[17px] font-bold text-white disabled:bg-gray-400`}
     >
       {children}
     </button>

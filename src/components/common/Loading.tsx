@@ -26,16 +26,16 @@ const Loading = ({ isRenew = false }: Props) => {
   };
 
   return (
-    <div>
+    <div className={`${isRenew ? 'px-6' : ''}`}>
       <Header onClick={handleClick} />
       <div className="flex flex-col gap-1.5">
         <div className="mt-[36px] flex items-center justify-between">
-          <span className=" font-Pretendard text-[22px] font-bold tracking-[-0.5px] text-gray800">
+          <span className=" font-pretendard text-[22px] font-bold tracking-[-0.5px] text-gray1100">
             {TITLE}
           </span>
           <BeatLoader color="#606873" size={9} />
         </div>
-        <span className="block font-Pretendard tracking-[-0.4px] text-gray600">{SUB_TITLE}</span>
+        <span className="block font-pretendard tracking-[-0.4px] text-gray900">{SUB_TITLE}</span>
       </div>
       {isRenew ? (
         <div className="mt-[25px] float-right">
@@ -43,7 +43,7 @@ const Loading = ({ isRenew = false }: Props) => {
         </div>
       ) : (
         <div className="mt-6 flex h-[185px] w-[327px] justify-between rounded-xl bg-gray100 pl-4 pt-[30px] tracking-[-0.6px]">
-          <span className="-[-0.6px]font-Pretendard whitespace-pre-line text-[15px] leading-[165%] text-gray600">
+          <span className="font-pretendard whitespace-pre-line text-[15px] leading-[165%] text-gray900">
             {randomCaution}
           </span>
           <LoadingAvatar />

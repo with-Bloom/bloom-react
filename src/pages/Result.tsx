@@ -42,14 +42,14 @@ const ResultPage = () => {
         <Header noCloseBtn={true} onClick={handleClick} />
 
         <div className="mb-7 h-[68px] w-[327px] flex justify-between">
-          <span className="text-2xl font-bold whitespace-pre-line font-Pretendard text-gray800">
+          <span className="text-2xl font-bold whitespace-pre-line font-pretendard text-gray1100">
             {RESULT_TITLE}
           </span>
           <ResultAvatar />
         </div>
 
         <div className="mb-5 w-[327px] rounded-[10px] border border-opacity-30 border-white bg-gradient-to-b from-[rgba(255,255,255,0.52)] to-[rgba(255,255,255,0.52)] px-[26px] pb-[70px] pt-[29px] backdrop-blur-[10px]">
-          <span className="font-Pretendard text-[15px] leading-[170%] tracking-[-0.6px] text-gray600">
+          <span className="whitespace-pre-line font-pretendard text-[15px] leading-[170%] tracking-[-0.6px] text-gray900">
             {result}
           </span>
         </div>
@@ -66,7 +66,7 @@ const ResultPage = () => {
         >
           <Button size="small">{COPY_BUTTON_TEXT}</Button>
         </CopyToClipboard>
-        <span className="mt-[12px] mb-[45px] underline font-medium tracking-[-0.4px] text-sm text-gray1200 font-Pretendard">
+        <span className="mt-[12px] mb-[45px] underline font-medium tracking-[-0.4px] text-sm text-gray600 font-pretendard">
           축사 다시 받아보기
         </span>
       </div>

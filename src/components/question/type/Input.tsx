@@ -14,7 +14,7 @@ const Input = ({ options, onClick }: Props) => {
   return (
     <>
       <input
-        className="options-gray400 h-11 w-[327px] rounded-[5px] bg-gray100 p-4 font-Pretendard text-[17px] tracking-[-0.3px] text-gray700 caret-indigo outline-indigo"
+        className="options-gray500 h-11 w-[327px] rounded-[5px] bg-gray100 p-4 font-pretendard text-[17px] tracking-[-0.3px] text-gray1000 caret-indigo outline-indigo"
         placeholder={options}
         maxLength={10}
         onChange={handleChange}
