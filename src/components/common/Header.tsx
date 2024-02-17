@@ -11,12 +11,12 @@ type Props = {
 const Header = ({ noCloseBtn = false, onClick }: Props) => {
   return (
     <div className="flex items-center justify-between w-full h-16">
-      <button onClick={onClick} data-ga="header_back" className="flex items-center justify-start w-6 h-6">
+      <button className="flex items-center justify-start w-6 h-6" data-ga="header_back" onClick={onClick}>
         <ChevronIcon />
       </button>
       {!noCloseBtn && (
         <Link to={'/'}>
-          <button data-ga="header_close" className="flex items-center justify-end w-6 h-6">
+          <button className="flex items-center justify-end w-6 h-6" data-ga="header_close">
             <CloseIcon />
           </button>
         </Link>
