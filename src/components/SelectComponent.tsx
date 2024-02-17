@@ -16,29 +16,29 @@ type Avatar = {
 };
 
 type Props = {
-  type: 'input' | 'avatar-card' | 'avatar-button' | 'primary-button' | 'textarea' | string;
+  ga: string;
   options: string | Avatar[] | PrimaryButton[];
+  type: 'input' | 'avatar-card' | 'avatar-button' | 'primary-button' | 'textarea' | string;
   // eslint-disable-next-line no-unused-vars
   onClick: (value: string) => void;
-  ga: string;
 };
 
-const SelectComponent = ({ type, options, onClick, ga }: Props) => {
+const SelectComponent = ({ ga, options, type, onClick }: Props) => {
   switch (type) {
     case 'input':
-      return <Input options={options as string} onClick={onClick} ga={ga} />;
+      return <Input options={options as string} ga={ga} onClick={onClick} />;
 
     case 'avatar-card':
-      return <AvatarCard options={options as Avatar[]} onClick={onClick} ga={ga} />;
+      return <AvatarCard options={options as Avatar[]} ga={ga} onClick={onClick} />;
 
     case 'avatar-button':
-      return <AvatarButton options={options as Avatar[]} onClick={onClick} ga={ga} />;
+      return <AvatarButton options={options as Avatar[]} ga={ga} onClick={onClick} />;
 
     case 'primary-button':
-      return <PrimaryButton options={options as PrimaryButton[]} onClick={onClick} ga={ga} />;
+      return <PrimaryButton options={options as PrimaryButton[]} ga={ga} onClick={onClick} />;
 
     case 'textarea':
-      return <Textarea options={options as string} onClick={onClick} ga={ga} />;
+      return <Textarea options={options as string} ga={ga} onClick={onClick} />;
 
     default:
       return null;

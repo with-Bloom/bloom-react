@@ -10,11 +10,11 @@ import RenewAvatar from 'assets/images/renew-avatar.svg?react';
 
 import Header from './Header';
 
-const SUB_TITLE = '잠시만 기다려 주세요';
-
 type Props = {
   isRenew?: boolean;
 };
+
+const SUB_TITLE = '잠시만 기다려 주세요';
 
 const Loading = ({ isRenew = false }: Props) => {
   const TITLE = isRenew ? '축사를 다시 작성하고 있어요!' : '축사를 작성하고 있어요!';

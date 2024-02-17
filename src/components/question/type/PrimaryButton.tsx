@@ -6,25 +6,25 @@ type Options = {
 };
 
 type Props = {
+  ga: string;
   options: Options[];
   // eslint-disable-next-line no-unused-vars
   onClick: (value: string) => void;
-  ga: string;
 };
 
 const TOOLTIP_TEXT = '3~4분 길이의 축사가 가장 많아요!';
 
-const PrimaryButton = ({ options, onClick, ga }: Props) => {
+const PrimaryButton = ({ ga, options, onClick }: Props) => {
   return (
     <ul className="flex flex-col gap-3">
       {options.map(({ id, value }) => (
-        <div key={id} className="relative">
+        <div className="relative" key={id}>
           <button
             className={`custom-hover flex h-11 w-[327px] items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-pretendard text-gray1000 ${
               value === '3분' ? 'relative' : ''
             }`}
-            onClick={() => onClick(value)}
             data-ga={ga}
+            onClick={() => onClick(value)}
           >
             {value}
           </button>
