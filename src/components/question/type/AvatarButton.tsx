@@ -10,9 +10,10 @@ type Props = {
   options: Options[];
   // eslint-disable-next-line no-unused-vars
   onClick: (value: string) => void;
+  ga: string;
 };
 
-const AvatarButton = ({ options, onClick }: Props) => {
+const AvatarButton = ({ options, onClick, ga }: Props) => {
   return (
     <ul className="grid grid-cols-4 grid-rows-2 gap-x-4 gap-y-7">
       {options.map(({ id, value, fill }) => {
@@ -22,6 +23,7 @@ const AvatarButton = ({ options, onClick }: Props) => {
               className="cursor-pointer hover:fill-indigo"
               onClick={() => onClick(value)}
               fill={fill}
+              data-ga={ga}
             />
             <span className="text-sm font-pretendard text-gray700">{value}</span>
           </div>

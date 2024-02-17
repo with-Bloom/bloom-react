@@ -9,11 +9,12 @@ type Props = {
   options: Options[];
   // eslint-disable-next-line no-unused-vars
   onClick: (value: string) => void;
+  ga: string;
 };
 
 const TOOLTIP_TEXT = '3~4분 길이의 축사가 가장 많아요!';
 
-const PrimaryButton = ({ options, onClick }: Props) => {
+const PrimaryButton = ({ options, onClick, ga }: Props) => {
   return (
     <ul className="flex flex-col gap-3">
       {options.map(({ id, value }) => (
@@ -23,6 +24,7 @@ const PrimaryButton = ({ options, onClick }: Props) => {
               value === '3분' ? 'relative' : ''
             }`}
             onClick={() => onClick(value)}
+            data-ga={ga}
           >
             {value}
           </button>

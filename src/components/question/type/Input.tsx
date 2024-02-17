@@ -6,9 +6,10 @@ type Props = {
   options: string;
   // eslint-disable-next-line no-unused-vars
   onClick: (value: string) => void;
+  ga: string;
 };
 
-const Input = ({ options, onClick }: Props) => {
+const Input = ({ options, onClick, ga }: Props) => {
   const [value, handleChange] = useInput('');
 
   return (
@@ -19,7 +20,7 @@ const Input = ({ options, onClick }: Props) => {
         maxLength={10}
         onChange={handleChange}
       ></input>
-      <Button onClick={() => onClick(value)} disabled={value.length === 0}>
+      <Button onClick={() => onClick(value)} disabled={value.length === 0} ga={ga}>
         다음
       </Button>
     </>

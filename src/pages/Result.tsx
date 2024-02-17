@@ -64,9 +64,9 @@ const ResultPage = () => {
             })
           }
         >
-          <Button>{COPY_BUTTON_TEXT}</Button>
+          <Button ga='result_clipboard'>{COPY_BUTTON_TEXT}</Button>
         </CopyToClipboard>
-        <span className="mt-[12px] mb-[45px] underline font-medium tracking-[-0.4px] text-sm text-gray600 font-pretendard">
+        <span className="mt-[12px] mb-[45px] underline font-medium tracking-[-0.4px] text-sm text-gray600 font-pretendard" data-ga="result_retry">
           축사 다시 받아보기
         </span>
       </div>
@@ -74,7 +74,7 @@ const ResultPage = () => {
       <div className="px-6 pb-10 pt-[62px] bg-white">
         <CautionList />
         <Link to={'/'}>
-          <Button>{HOME_BUTTON_TEXT}</Button>
+          <Button ga='result_home'>{HOME_BUTTON_TEXT}</Button>
         </Link>
       </div>
     </Layout>

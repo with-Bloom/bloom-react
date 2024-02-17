@@ -4,12 +4,14 @@ export const QUESTION_LIST = [
     question: '축사를 할 분의\n이름을 알려 주세요.',
     type: 'input',
     options: 'ex. 홍길동',
+    ga: 'question_1st_next',
   },
   {
     id: 2,
     question: '축사를 받을 분의\n이름을 알려 주세요.',
     type: 'input',
     options: 'ex. 홍길동',
+    ga: 'question_2nd',
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const QUESTION_LIST = [
       { id: 1, value: '신랑', fill: '#AEC9FF' },
       { id: 2, value: '신부', fill: '#FB5500' },
     ],
+    ga: 'question_3rd',
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ export const QUESTION_LIST = [
       { id: 5, value: '형', fill: '#AEC9FF' },
       { id: 6, value: '누나', fill: '#E991FB' },
     ],
+    ga: 'question_4rd',
   },
   {
     id: 5,
@@ -44,6 +48,7 @@ export const QUESTION_LIST = [
       { id: 4, value: '5분' },
       { id: 5, value: '6분' },
     ],
+    ga: 'question_5th',
   },
   {
     id: 6,
@@ -53,6 +58,7 @@ export const QUESTION_LIST = [
       { id: 1, value: '반말' },
       { id: 2, value: '존댓말' },
     ],
+    ga: 'question_6th',
   },
   {
     id: 7,
@@ -65,18 +71,21 @@ export const QUESTION_LIST = [
       { id: 4, value: '차분' },
       { id: 5, value: '눈물' },
     ],
+    ga: 'question_7th',
   },
   {
     id: 8,
     question: '축사 중간에 들어갈 재밌는\n에피소드가 있다면 알려 주세요.',
     type: 'textarea',
     options: 'ex. 오빠는 나에게 신부 언니와의 연애를\n자주 상담했다.',
+    ga: 'question_8th',
   },
   {
     id: 9,
     question: '축사에서 마지막으로 하고\n싶은 말이 있다면 알려 주세요.',
     type: 'textarea',
     options: 'ex. 행복하게 잘 살아라!',
+    ga: 'question_9th',
   },
 ];
 

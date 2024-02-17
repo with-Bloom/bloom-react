@@ -75,7 +75,7 @@ const QuestionPage = () => {
         <>
           <Header onClick={handlePrev} />
           <ProgressBar currentPage={currentPage} />
-          {QUESTION_LIST.map(({ id, question, type, options }) => {
+          {QUESTION_LIST.map(({ id, question, type, options, ga }) => {
             return (
               currentPage === id && (
                 <div key={id}>
@@ -85,6 +85,7 @@ const QuestionPage = () => {
                       type: type,
                       options: options,
                       onClick: handleClick,
+                      ga: ga
                     })}
                   </div>
                 </div>

@@ -24,7 +24,7 @@ const HomePage = () => {
         </span>
       </div>
       <Link to={'/question'}>
-        <Button>{BUTTON_TEXT}</Button>
+        <Button ga='onboarding_cta'>{BUTTON_TEXT}</Button>
       </Link>
     </Layout>
   );
