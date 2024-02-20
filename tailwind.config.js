@@ -18,7 +18,7 @@ export default {
       },
 
       backgroundImage: {
-        gradient: 'url("/images/bg_result.jpg")',
+        gradient: 'url("/assets/bg_result.webp")',
       },
     },
     fontFamily: {
