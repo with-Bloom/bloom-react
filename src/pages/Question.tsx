@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { UserAnswer } from 'types/index';
@@ -6,8 +6,9 @@ import { UserAnswer } from 'types/index';
 import { QUESTION_LIST } from 'constants/index';
 import { API_MESSAGE } from 'constants/path';
 
+import { PageContext } from 'context/PageContext';
+
 import useFetch from 'hooks/useFetch';
-import usePageHistory from 'hooks/usePageHistory';
 
 import SelectComponent from 'components/SelectComponent';
 import Header from 'components/common/Header';
@@ -19,8 +20,9 @@ import QuestionTitle from 'components/question/QuestionTitle';
 const LAST_PAGE = 9;
 
 const QuestionPage = () => {
+  const { page, handlePrev, handleNext } = useContext(PageContext);
   const navigate = useNavigate();
-  const [currentPage, handlePrev, handleNext] = usePageHistory(1);
+
   const [userAnswer, setUserAnswer] = useState<UserAnswer>({
     userName: '',
     targetName: '',
@@ -49,7 +51,7 @@ const QuestionPage = () => {
   ];
 
   const handleClick = async (value: string) => {
-    const currentKey = answerListKeysOrder[currentPage - 1];
+    const currentKey = answerListKeysOrder[page - 1];
 
     setUserAnswer((prevAnswerList) => {
       const updatedAnswerList = {
@@ -59,7 +61,7 @@ const QuestionPage = () => {
       return updatedAnswerList;
     });
 
-    if (currentPage === LAST_PAGE) {
+    if (page === LAST_PAGE) {
       const data = await fetchData();
       navigate('/result', { state: { data, name: userAnswer.userName } });
     } else {
@@ -74,10 +76,10 @@ const QuestionPage = () => {
       ) : (
         <>
           <Header onClick={handlePrev} />
-          <ProgressBar currentPage={currentPage} />
+          <ProgressBar currentPage={page} />
           {QUESTION_LIST.map(({ id, question, type, options, ga }) => {
             return (
-              currentPage === id && (
+              page === id && (
                 <div key={id}>
                   <QuestionTitle>{question}</QuestionTitle>
                   <div className="flex h-[calc(100vh-273px)] flex-col justify-between">
@@ -85,7 +87,7 @@ const QuestionPage = () => {
                       type: type,
                       options: options,
                       onClick: handleClick,
-                      ga: ga
+                      ga: ga,
                     })}
                   </div>
                 </div>

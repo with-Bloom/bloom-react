@@ -1,5 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
+import { PageContextProvider } from 'context/PageContext';
+
 import ErrorPage from 'pages/Error';
 import HomePage from 'pages/Home';
 import QuestionPage from 'pages/Question';
@@ -10,8 +12,22 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/question" element={<QuestionPage />}></Route>
-        <Route path="/result" element={<ResultPage />}></Route>
+        <Route
+          path="/question"
+          element={
+            <PageContextProvider>
+              <QuestionPage />
+            </PageContextProvider>
+          }
+        ></Route>
+        <Route
+          path="/result"
+          element={
+            <PageContextProvider>
+              <ResultPage />
+            </PageContextProvider>
+          }
+        ></Route>
         <Route path="/error" element={<ErrorPage />}></Route>
       </Routes>
     </Router>
