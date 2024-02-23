@@ -3,13 +3,14 @@ import useInput from 'hooks/useInput';
 import Button from 'components/common/Button';
 
 type Props = {
+  field: string;
   ga: string;
   options: string;
   // eslint-disable-next-line no-unused-vars
-  onClick: (value: string) => void;
+  onClick: (field: string, value: string) => void;
 };
 
-const Textarea = ({ ga, options, onClick }: Props) => {
+const Textarea = ({ field, ga, options, onClick }: Props) => {
   const [value, handleChange] = useInput('');
 
   return (
@@ -28,7 +29,7 @@ const Textarea = ({ ga, options, onClick }: Props) => {
           </span>
         </div>
       </label>
-      <Button disabled={value.length === 0} ga={ga} onClick={() => onClick(value)}>
+      <Button disabled={value.length === 0} ga={ga} onClick={() => onClick(field, value)}>
         다음
       </Button>
     </>

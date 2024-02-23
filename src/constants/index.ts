@@ -2,6 +2,7 @@ export const QUESTION_LIST = [
   {
     id: 1,
     question: '축사를 할 분의\n이름을 알려 주세요.',
+    field: 'userName',
     type: 'input',
     options: 'ex. 홍길동',
     ga: 'question_1st_next',
@@ -9,6 +10,7 @@ export const QUESTION_LIST = [
   {
     id: 2,
     question: '축사를 받을 분의\n이름을 알려 주세요.',
+    field: 'targetName',
     type: 'input',
     options: 'ex. 홍길동',
     ga: 'question_2nd',
@@ -16,6 +18,7 @@ export const QUESTION_LIST = [
   {
     id: 3,
     question: '축사를 받을 사람은\n신랑인가요, 신부인가요?',
+    field: 'targetType',
     type: 'avatar-card',
     options: [
       { id: 1, value: '신랑', fill: '#AEC9FF' },
@@ -26,6 +29,7 @@ export const QUESTION_LIST = [
   {
     id: 4,
     question: '축사를 받는 사람을\n뭐라고 부르면 좋을까요?',
+    field: 'relationship',
     type: 'avatar-button',
     options: [
       { id: 1, value: '친구', fill: '#C9F4B4' },
@@ -40,6 +44,7 @@ export const QUESTION_LIST = [
   {
     id: 5,
     question: '축사를 몇 분으로\n하면 좋을까요?',
+    field: 'minute',
     type: 'primary-button',
     options: [
       { id: 1, value: '2분' },
@@ -53,6 +58,7 @@ export const QUESTION_LIST = [
   {
     id: 6,
     question: '축사 말투는\n어떻게 할까요?',
+    field: 'speechType',
     type: 'primary-button',
     options: [
       { id: 1, value: '반말' },
@@ -63,6 +69,7 @@ export const QUESTION_LIST = [
   {
     id: 7,
     question: '축사의 컨셉은\n무엇인가요?',
+    field: 'concept',
     type: 'primary-button',
     options: [
       { id: 1, value: '감동' },
@@ -76,6 +83,7 @@ export const QUESTION_LIST = [
   {
     id: 8,
     question: '축사 중간에 들어갈 재밌는\n에피소드가 있다면 알려 주세요.',
+    field: 'story',
     type: 'textarea',
     options: 'ex. 오빠는 나에게 신부 언니와의 연애를\n자주 상담했다.',
     ga: 'question_8th',
@@ -83,6 +91,7 @@ export const QUESTION_LIST = [
   {
     id: 9,
     question: '축사에서 마지막으로 하고\n싶은 말이 있다면 알려 주세요.',
+    field: 'lastComment',
     type: 'textarea',
     options: 'ex. 행복하게 잘 살아라!',
     ga: 'question_9th',
