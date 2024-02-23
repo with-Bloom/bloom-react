@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
-import { PageContextProvider } from 'context/PageContext';
+import { AnswerProvider } from 'context/AnswerContext';
+import { PageProvider } from 'context/PageContext';
 
 import ErrorPage from 'pages/Error';
 import HomePage from 'pages/Home';
@@ -9,28 +10,30 @@ import ResultPage from 'pages/Result';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route
-          path="/question"
-          element={
-            <PageContextProvider>
-              <QuestionPage />
-            </PageContextProvider>
-          }
-        ></Route>
-        <Route
-          path="/result"
-          element={
-            <PageContextProvider>
-              <ResultPage />
-            </PageContextProvider>
-          }
-        ></Route>
-        <Route path="/error" element={<ErrorPage />}></Route>
-      </Routes>
-    </Router>
+    <AnswerProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route
+            path="/question"
+            element={
+              <PageProvider>
+                <QuestionPage />
+              </PageProvider>
+            }
+          ></Route>
+          <Route
+            path="/result"
+            element={
+              <PageProvider>
+                <ResultPage />
+              </PageProvider>
+            }
+          ></Route>
+          <Route path="/error" element={<ErrorPage />}></Route>
+        </Routes>
+      </Router>
+    </AnswerProvider>
   );
 };
 

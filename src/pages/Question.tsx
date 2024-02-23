@@ -1,11 +1,10 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import { UserAnswer } from 'types/index';
 
 import { QUESTION_LIST } from 'constants/index';
 import { API_MESSAGE } from 'constants/path';
 
+import { AnswerContext } from 'context/AnswerContext';
 import { PageContext } from 'context/PageContext';
 
 import useFetch from 'hooks/useFetch';
@@ -21,49 +20,18 @@ const LAST_PAGE = 9;
 
 const QuestionPage = () => {
   const { page, handlePrev, handleNext } = useContext(PageContext);
+  const { answer, handleAnswerUpdate } = useContext(AnswerContext);
+
   const navigate = useNavigate();
 
-  const [userAnswer, setUserAnswer] = useState<UserAnswer>({
-    userName: '',
-    targetName: '',
-    targetType: '',
-    relationship: '',
-    minute: 0,
-    speechType: '',
-    concept: '',
-    story: '',
-    lastComment: '',
-    isRenew: false,
-  });
+  const { fetchData, isLoading } = useFetch(API_MESSAGE, answer);
 
-  const { fetchData, isLoading } = useFetch(API_MESSAGE, userAnswer);
-
-  const answerListKeysOrder = [
-    'userName',
-    'targetName',
-    'targetType',
-    'relationship',
-    'minute',
-    'speechType',
-    'concept',
-    'story',
-    'lastComment',
-  ];
-
-  const handleClick = async (value: string) => {
-    const currentKey = answerListKeysOrder[page - 1];
-
-    setUserAnswer((prevAnswerList) => {
-      const updatedAnswerList = {
-        ...prevAnswerList,
-        [currentKey]: value,
-      };
-      return updatedAnswerList;
-    });
+  const handleClick = async (field: string, value: string) => {
+    handleAnswerUpdate(field, value);
 
     if (page === LAST_PAGE) {
       const data = await fetchData();
-      navigate('/result', { state: { data, name: userAnswer.userName } });
+      navigate('/result', { state: { data } });
     } else {
       handleNext();
     }
@@ -77,7 +45,7 @@ const QuestionPage = () => {
         <>
           <Header onClick={handlePrev} />
           <ProgressBar currentPage={page} />
-          {QUESTION_LIST.map(({ id, question, type, options, ga }) => {
+          {QUESTION_LIST.map(({ id, question, type, field, options, ga }) => {
             return (
               page === id && (
                 <div key={id}>
@@ -87,6 +55,7 @@ const QuestionPage = () => {
                       type: type,
                       options: options,
                       onClick: handleClick,
+                      field: field,
                       ga: ga,
                     })}
                   </div>
