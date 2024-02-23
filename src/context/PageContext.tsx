@@ -7,13 +7,9 @@ type ContextType = {
   handleNext: () => void;
 };
 
-type Props = {
-  children: React.ReactNode;
-};
+const PageContext = createContext<ContextType>(null!);
 
-const PageContext = createContext<ContextType>(null!); // todo: null! 타입이 적절한지 체크
-
-const PageContextProvider = ({ children }: Props) => {
+const PageProvider = ({ children }: { children: React.ReactNode }) => {
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
 
@@ -31,4 +27,4 @@ const PageContextProvider = ({ children }: Props) => {
   return <PageContext.Provider value={{ page, handlePrev, handleNext }}>{children}</PageContext.Provider>;
 };
 
-export { PageContext, PageContextProvider };
+export { PageContext, PageProvider };
