@@ -30,7 +30,7 @@ const Textarea = ({ field, ga, options, onClick }: Props) => {
         </div>
       </label>
       <Button disabled={value.length === 0} ga={ga} onClick={() => onClick(field, value)}>
-        다음
+        {field === 'lastComment' ? '내 축사 확인하기' : '다음'}
       </Button>
     </>
   );
