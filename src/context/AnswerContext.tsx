@@ -5,7 +5,7 @@ import { UserAnswer } from 'types/index';
 type ContextType = {
   answer: UserAnswer;
   // eslint-disable-next-line no-unused-vars
-  handleAnswerUpdate: (field: string, value: string) => void;
+  handleAnswerUpdate: (field: string, value: string | boolean) => void;
 };
 
 const AnswerContext = createContext<ContextType>(null!);
@@ -24,7 +24,7 @@ const AnswerProvider = ({ children }: { children: React.ReactNode }) => {
     isRenew: false,
   });
 
-  const handleAnswerUpdate = (field: string, value: Value) => {
+  const handleAnswerUpdate = (field: string, value: string | boolean) => {
     setAnswer((prevAnswer) => ({ ...prevAnswer, [field]: value }));
   };
 
