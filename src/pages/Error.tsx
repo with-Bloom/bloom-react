@@ -1,7 +1,5 @@
-import { Link } from 'react-router-dom';
-
-import Button from 'components/common/Button';
 import Layout from 'components/common/Layout';
+import NavigateButton from 'components/common/NavigateButton';
 
 import ErrorAvatar from 'assets/images/error-avatar.svg?react';
 
@@ -17,9 +15,8 @@ const ErrorPage = () => {
         <span className="text-[22px] font-bold font-pretendard text-gray1100 mt-[33px]">{TITLE}</span>
         <span className="text-[15px] text-gray900 font-pretendard mt-[7px]">{SUB_TITLE}</span>
       </div>
-      <Link to={'/'}>
-        <Button>{BUTTON_TEXT}</Button>
-      </Link>
+
+      <NavigateButton path="/">{BUTTON_TEXT}</NavigateButton>
     </Layout>
   );
 };
