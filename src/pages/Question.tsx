@@ -9,7 +9,7 @@ import { PageContext } from 'context/PageContext';
 
 import useFetch from 'hooks/useFetch';
 
-import SelectComponent from 'components/SelectComponent';
+import SelectComponent from 'components/question/SelectComponent';
 import Header from 'components/common/Header';
 import Layout from 'components/common/Layout';
 import Loading from 'components/common/Loading';
