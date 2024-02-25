@@ -5,7 +5,7 @@ import CloseIcon from 'assets/images/close.svg?react';
 
 type Props = {
   noCloseBtn?: boolean;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 const Header = ({ noCloseBtn = false, onClick }: Props) => {

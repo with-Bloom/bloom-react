@@ -24,7 +24,7 @@ const AnswerProvider = ({ children }: { children: React.ReactNode }) => {
     isRenew: false,
   });
 
-  const handleAnswerUpdate = (field: string, value: string) => {
+  const handleAnswerUpdate = (field: string, value: Value) => {
     setAnswer((prevAnswer) => ({ ...prevAnswer, [field]: value }));
   };
 

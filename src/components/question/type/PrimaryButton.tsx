@@ -1,14 +1,11 @@
-import TriangleIcon from 'assets/images/triangle.svg?react';
+import { ButtonOptions } from 'types/index';
 
-type Options = {
-  id: number;
-  value: string;
-};
+import TriangleIcon from 'assets/images/triangle.svg?react';
 
 type Props = {
   field: string;
   ga: string;
-  options: Options[];
+  options: ButtonOptions[];
   // eslint-disable-next-line no-unused-vars
   onClick: (field: string, value: string) => void;
 };

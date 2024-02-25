@@ -1,15 +1,11 @@
-import FlowerIcon from 'assets/images/flower.svg?react';
+import { AvatarOptions } from 'types/index';
 
-type Options = {
-  id: number;
-  value: string;
-  fill: string;
-};
+import FlowerIcon from 'assets/images/flower.svg?react';
 
 type Props = {
   field: string;
   ga: string;
-  options: Options[];
+  options: AvatarOptions[];
   // eslint-disable-next-line no-unused-vars
   onClick: (field: string, value: string) => void;
 };
