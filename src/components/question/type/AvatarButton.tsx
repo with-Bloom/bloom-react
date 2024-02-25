@@ -7,13 +7,14 @@ type Options = {
 };
 
 type Props = {
+  field: string;
   ga: string;
   options: Options[];
   // eslint-disable-next-line no-unused-vars
-  onClick: (value: string) => void;
+  onClick: (field: string, value: string) => void;
 };
 
-const AvatarButton = ({ ga, options, onClick }: Props) => {
+const AvatarButton = ({ field, ga, options, onClick }: Props) => {
   return (
     <ul className="grid grid-cols-4 grid-rows-2 gap-x-4 gap-y-7">
       {options.map(({ id, value, fill }) => {
@@ -23,7 +24,7 @@ const AvatarButton = ({ ga, options, onClick }: Props) => {
               className="cursor-pointer hover:fill-indigo"
               data-ga={ga}
               fill={fill}
-              onClick={() => onClick(value)}
+              onClick={() => onClick(field, value)}
             />
             <span className="text-sm font-pretendard text-gray700">{value}</span>
           </div>

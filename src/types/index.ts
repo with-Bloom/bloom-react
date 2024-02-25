@@ -3,7 +3,7 @@ export type UserAnswer = {
   targetName: string;
   targetType: string;
   relationship: string;
-  minute: number;
+  minute: string;
   speechType: string;
   concept: string;
   story: string;
