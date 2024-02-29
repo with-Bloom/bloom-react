@@ -5,6 +5,7 @@ import { PageProvider } from 'context/PageContext';
 
 import ErrorPage from 'pages/Error';
 import HomePage from 'pages/Home';
+import NotFound from 'pages/NotFound';
 import QuestionPage from 'pages/Question';
 import ResultPage from 'pages/Result';
 
@@ -31,6 +32,7 @@ const App = () => {
             }
           ></Route>
           <Route path="/error" element={<ErrorPage />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </Router>
     </AnswerProvider>
