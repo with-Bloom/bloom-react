@@ -12,7 +12,6 @@ import Loading from 'components/common/Loading';
 import CopyToClipboardButton from 'components/result/resultSection/ClipboardButton';
 import ResultContentBox from 'components/result/resultSection/ResultContentBox';
 import ResultRetryButton from 'components/result/resultSection/ResultRetryButton';
-import ResultSection from 'components/result/resultSection/ResultSection';
 import ResultTitle from 'components/result/resultSection/ResultTitle';
 import SpeechCautionSection from 'components/result/speechCautionSection/SpeechCautionSection';
 
@@ -48,15 +47,13 @@ const Result = () => {
         <Loading isRenew={true} />
       ) : (
         <>
-          <ResultSection>
+          <div className="flex flex-col items-center px-6 bg-cover bg-gradient">
             <Header />
             <ResultTitle name={name} />
-
             <ResultContentBox>{result}</ResultContentBox>
-
             <CopyToClipboardButton copyText={result} />
             <ResultRetryButton onClick={handleRefetch} />
-          </ResultSection>
+          </div>
 
           <SpeechCautionSection />
         </>
