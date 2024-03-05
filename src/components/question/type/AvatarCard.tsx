@@ -12,11 +12,11 @@ type Props = {
 
 const AvatarCard = ({ field, ga, options, onClick }: Props) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between gap-[24px]">
       {options.map(({ id, value, fill }) => {
         return (
           <button
-            className="custom-hover flex h-[187px] w-[158px] flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-pretendard"
+            className="custom-hover flex h-[187px] w-full flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-pretendard"
             key={id}
             data-ga={ga}
             onClick={() => onClick(field, value)}

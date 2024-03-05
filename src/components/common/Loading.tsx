@@ -26,8 +26,8 @@ const Loading = ({ isRenew = false }: Props) => {
   };
 
   return (
-    <div className={`${isRenew ? 'px-6' : ''}`}>
-      <Header onClick={handleClick} />
+    <div className="px-6">
+      <Header closeBtn={true} onClick={handleClick} />
       <div className="flex flex-col gap-1.5">
         <div className="mt-[36px] flex items-center justify-between">
           <span className=" font-pretendard text-[22px] font-bold tracking-[-0.5px] text-gray1100">
@@ -42,7 +42,7 @@ const Loading = ({ isRenew = false }: Props) => {
           <RenewAvatar />
         </div>
       ) : (
-        <div className="mt-6 flex h-[185px] w-[327px] justify-between rounded-xl bg-gray100 pl-4 pt-[30px] tracking-[-0.6px]">
+        <div className="mt-6 flex h-[185px] w-full justify-between rounded-xl bg-gray100 pl-4 pt-[30px] tracking-[-0.6px]">
           <span className="font-pretendard whitespace-pre-line text-[15px] leading-[165%] text-gray900">
             {randomCaution}
           </span>
