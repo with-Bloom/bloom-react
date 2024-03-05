@@ -12,7 +12,7 @@ type Props = {
 
 const AvatarCard = ({ field, ga, options, onClick }: Props) => {
   return (
-    <div className="flex justify-between gap-[24px]">
+    <div className="flex justify-between gap-3">
       {options.map(({ id, value, fill }) => {
         return (
           <button
