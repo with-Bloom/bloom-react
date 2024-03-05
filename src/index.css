@@ -38,3 +38,9 @@ body {
   background-color: #e9edff;
   outline: 2px solid #7990f6;
 }
+
+.swal2-container {
+  max-width: 500px !important;
+  width: 100% !important;
+  padding: 24px;
+}
