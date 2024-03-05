@@ -18,7 +18,7 @@ import SelectComponent from 'components/question/SelectComponent';
 
 const LAST_PAGE = 9;
 
-const QuestionPage = () => {
+const Question = () => {
   const { page, handlePrev, handleNext } = useContext(PageContext);
   const { answer, handleAnswerUpdate } = useContext(AnswerContext);
 
@@ -42,8 +42,8 @@ const QuestionPage = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <>
-          <Header onClick={handlePrev} />
+        <div className="px-6">
+          <Header closeBtn={true} onClick={handlePrev} />
           <ProgressBar currentPage={page} />
           {QUESTION_LIST.map(({ id, question, type, field, options, ga }) => {
             return (
@@ -63,10 +63,10 @@ const QuestionPage = () => {
               )
             );
           })}
-        </>
+        </div>
       )}
     </Layout>
   );
 };
 
-export default QuestionPage;
+export default Question;

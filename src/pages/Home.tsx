@@ -1,18 +1,17 @@
-import Layout from 'components/common/Layout';
 import NavigateButton from 'components/common/NavigateButton';
 import HeroSection from 'components/home/HeroSection';
 
 const BUTTON_TEXT = '축사 만들러 가기';
 
-const HomePage = () => {
+const Home = () => {
   return (
-    <Layout>
+    <div className="px-6">
       <HeroSection />
       <NavigateButton path="/question" ga="onboarding_cta">
         {BUTTON_TEXT}
       </NavigateButton>
-    </Layout>
+    </div>
   );
 };
 
-export default HomePage;
+export default Home;

@@ -8,7 +8,6 @@ import { AnswerContext } from 'context/AnswerContext';
 import useFetch from 'hooks/useFetch';
 
 import Header from 'components/common/Header';
-import Layout from 'components/common/Layout';
 import Loading from 'components/common/Loading';
 import CopyToClipboardButton from 'components/result/resultSection/ClipboardButton';
 import ResultContentBox from 'components/result/resultSection/ResultContentBox';
@@ -17,7 +16,7 @@ import ResultSection from 'components/result/resultSection/ResultSection';
 import ResultTitle from 'components/result/resultSection/ResultTitle';
 import SpeechCautionSection from 'components/result/speechCautionSection/SpeechCautionSection';
 
-const ResultPage = () => {
+const Result = () => {
   const [result, setResult] = useState('');
 
   const location = useLocation();
@@ -44,13 +43,13 @@ const ResultPage = () => {
   };
 
   return (
-    <Layout style="result">
+    <>
       {isLoading ? (
         <Loading isRenew={true} />
       ) : (
         <>
           <ResultSection>
-            <Header noCloseBtn={true} />
+            <Header />
             <ResultTitle name={name} />
 
             <ResultContentBox>{result}</ResultContentBox>
@@ -62,8 +61,8 @@ const ResultPage = () => {
           <SpeechCautionSection />
         </>
       )}
-    </Layout>
+    </>
   );
 };
 
-export default ResultPage;
+export default Result;
