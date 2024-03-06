@@ -44,3 +44,10 @@ body {
   width: 100% !important;
   padding: 24px;
 }
+
+body {
+  -ms-overflow-style: none;
+  }
+  ::-webkit-scrollbar {
+  display: none;
+  }
