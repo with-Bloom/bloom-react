@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 type ContextType = {
   page: number;
@@ -10,13 +9,9 @@ type ContextType = {
 const PageContext = createContext<ContextType>(null!);
 
 const PageProvider = ({ children }: { children: React.ReactNode }) => {
-  const navigate = useNavigate();
   const [page, setPage] = useState(1);
 
   const handlePrev = () => {
-    if (page === 1) {
-      navigate('/');
-    }
     setPage((page) => page - 1);
   };
 
