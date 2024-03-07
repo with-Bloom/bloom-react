@@ -7,7 +7,7 @@ import NotFound from 'pages/NotFound';
 import Question from 'pages/Question';
 import Result from 'pages/Result';
 
-import Root from './root';
+import Root from './Root';
 
 const Router = () => {
   const router = createBrowserRouter([
