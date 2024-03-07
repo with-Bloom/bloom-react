@@ -27,7 +27,7 @@ const Loading = ({ isRenew = false }: Props) => {
 
   return (
     <div className="px-6">
-      <Header closeBtn={true} onClick={handleClick} />
+      <Header onClick={handleClick} />
       <div className="flex flex-col gap-1.5">
         <div className="mt-[36px] flex items-center justify-between">
           <span className=" font-pretendard text-[22px] font-bold tracking-[-0.5px] text-gray1100">

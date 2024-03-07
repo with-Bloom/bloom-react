@@ -43,7 +43,7 @@ const Question = () => {
         <Loading />
       ) : (
         <div className="px-6">
-          <Header closeBtn={true} onClick={handlePrev} />
+          <Header onClick={handlePrev} />
           <ProgressBar currentPage={page} />
           {QUESTION_LIST.map(({ id, question, type, field, options, ga }) => {
             return (
