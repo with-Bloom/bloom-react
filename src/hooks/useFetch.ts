@@ -1,7 +1,12 @@
 import { useState } from 'react';
 
+type ResponseData = {
+  messageId: string;
+  resultData: string;
+};
+
 type UseFetchResponse = {
-  fetchData: () => Promise<void>;
+  fetchData: () => Promise<ResponseData>;
   isLoading: boolean;
 };
 

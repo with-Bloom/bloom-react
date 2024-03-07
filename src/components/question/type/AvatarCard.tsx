@@ -1,26 +1,22 @@
-import FlowerIcon from 'assets/images/flower.svg?react';
+import { AvatarOptions } from 'types/index';
 
-type Options = {
-  id: number;
-  value: string;
-  fill: string;
-};
+import FlowerIcon from 'assets/images/flower.svg?react';
 
 type Props = {
   field: string;
   ga: string;
-  options: Options[];
+  options: AvatarOptions[];
   // eslint-disable-next-line no-unused-vars
   onClick: (field: string, value: string) => void;
 };
 
 const AvatarCard = ({ field, ga, options, onClick }: Props) => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between gap-3">
       {options.map(({ id, value, fill }) => {
         return (
           <button
-            className="custom-hover flex h-[187px] w-[158px] flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-pretendard"
+            className="custom-hover flex h-[187px] w-full flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-pretendard"
             key={id}
             data-ga={ga}
             onClick={() => onClick(field, value)}

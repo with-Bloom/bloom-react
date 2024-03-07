@@ -10,3 +10,17 @@ export type UserAnswer = {
   lastComment: string;
   isRenew: boolean;
 };
+
+// SelectComponent type
+export type Options = AvatarOptions[] | ButtonOptions[] | string;
+
+export type AvatarOptions = {
+  id: number;
+  value: string;
+  fill: string;
+};
+
+export type ButtonOptions = {
+  id: number;
+  value: string;
+};

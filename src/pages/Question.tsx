@@ -9,16 +9,16 @@ import { PageContext } from 'context/PageContext';
 
 import useFetch from 'hooks/useFetch';
 
-import SelectComponent from 'components/question/SelectComponent';
 import Header from 'components/common/Header';
 import Layout from 'components/common/Layout';
 import Loading from 'components/common/Loading';
 import ProgressBar from 'components/question/ProgressBar';
 import QuestionTitle from 'components/question/QuestionTitle';
+import SelectComponent from 'components/question/SelectComponent';
 
 const LAST_PAGE = 9;
 
-const QuestionPage = () => {
+const Question = () => {
   const { page, handlePrev, handleNext } = useContext(PageContext);
   const { answer, handleAnswerUpdate } = useContext(AnswerContext);
 
@@ -42,7 +42,7 @@ const QuestionPage = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <>
+        <div className="px-6">
           <Header onClick={handlePrev} />
           <ProgressBar currentPage={page} />
           {QUESTION_LIST.map(({ id, question, type, field, options, ga }) => {
@@ -63,10 +63,10 @@ const QuestionPage = () => {
               )
             );
           })}
-        </>
+        </div>
       )}
     </Layout>
   );
 };
 
-export default QuestionPage;
+export default Question;
