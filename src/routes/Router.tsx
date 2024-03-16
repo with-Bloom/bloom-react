@@ -1,5 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
+import { ROUTES_PATH } from 'constants/routes';
+
 import Edit from 'pages/Edit';
 import Error from 'pages/Error';
 import Home from 'pages/Home';
@@ -18,11 +20,11 @@ const Router = () => {
       errorElement: <NotFound />,
       children: [
         { index: true, element: <Home /> },
-        { path: 'onboarding', element: <Onboarding /> },
-        { path: 'question', element: <Question /> },
-        { path: 'result', element: <Result /> },
-        { path: 'edit', element: <Edit /> },
-        { path: 'error', element: <Error /> },
+        { path: ROUTES_PATH.onboarding, element: <Onboarding /> },
+        { path: ROUTES_PATH.question, element: <Question /> },
+        { path: ROUTES_PATH.result, element: <Result /> },
+        { path: ROUTES_PATH.edit, element: <Edit /> },
+        { path: ROUTES_PATH.error, element: <Error /> },
       ],
     },
   ]);
