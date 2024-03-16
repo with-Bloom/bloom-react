@@ -10,7 +10,7 @@ const SpeechCautionSection = () => {
     <div className="px-6 pb-10 pt-[62px] bg-white">
       <CautionTitle />
       <CautionList />
-      <NavigateButton path="/" ga="result_home">
+      <NavigateButton path="home" ga="result_home">
         {HOME_BUTTON_TEXT}
       </NavigateButton>
     </div>

@@ -49,7 +49,7 @@ const Onboarding = () => {
           ))}
         </Slider>
       </div>
-      <NavigateButton path="/question">축사 만들러 가기</NavigateButton>
+      <NavigateButton path="home">축사 만들러 가기</NavigateButton>
     </div>
   );
 };
