@@ -9,7 +9,7 @@ const ResultTitle = ({ name }: Props) => {
 
   return (
     <div className="mb-7 h-[68px] w-full flex justify-between">
-      <span className="text-2xl font-bold whitespace-pre-line font-pretendard text-gray1100">
+      <span className="text-2xl font-bold whitespace-pre-line font-pretendard text-gray1000">
         {RESULT_TITLE}
       </span>
       <ResultAvatar />
