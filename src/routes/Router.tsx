@@ -4,6 +4,7 @@ import Edit from 'pages/Edit';
 import Error from 'pages/Error';
 import Home from 'pages/Home';
 import NotFound from 'pages/NotFound';
+import Onboarding from 'pages/Onboarding';
 import Question from 'pages/Question';
 import Result from 'pages/Result';
 
@@ -17,6 +18,7 @@ const Router = () => {
       errorElement: <NotFound />,
       children: [
         { index: true, element: <Home /> },
+        { path: 'onboarding', element: <Onboarding /> },
         { path: 'question', element: <Question /> },
         { path: 'result', element: <Result /> },
         { path: 'edit', element: <Edit /> },

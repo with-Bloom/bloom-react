@@ -1,4 +1,5 @@
-import Carousel from 'components/home/Carousel';
+import NavigateButton from 'components/common/NavigateButton';
+import Slider from 'components/home/Slider';
 
 const slides = [
   {
@@ -6,7 +7,7 @@ const slides = [
     description: {
       title: '막막한 축사 준비를 손쉽게',
       subTitle: '소중한 사람의 축복을 위해 진심을 전할 수 있도록\nAI가 맞춤형 축사 문장을 바로 생성해 줘요.',
-  },
+    },
   },
 
   {
@@ -25,11 +26,31 @@ const slides = [
   },
 ];
 
+// TODO: 무한 슬라이더 구현
 const Onboarding = () => {
+  const options = {
+    slideWidth: 500,
+    slideCount: 3,
+    showDots: true,
+  };
+
   return (
-    <>
-      <Carousel slide={slides} />
-    </>
+    <div className="px-6">
+      <div className="w-full max-w-[500px]">
+        <Slider {...options}>
+          {slides.map(({ image, description }, index) => (
+            <div key={index} className="w-[500px] flex-shrink-0 flex flex-col items-center">
+              <img src={image} />
+              <p className="font-bold font-pretendard text-[23px] text-gray1000">{description.title}</p>
+              <p className="trackimg-[-0.5px] font-pretendard text-[14px] text-gray800 whitespace-pre-line">
+                {description.subTitle}
+              </p>
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <NavigateButton path="/question">축사 만들러 가기</NavigateButton>
+    </div>
   );
 };
 
