@@ -13,13 +13,13 @@ const Slider = ({ children, slideWidth, slideCount, showDots }: Props) => {
   return (
     <>
       {/* Viewer */}
-      <div className="overflow-hidden" style={{ width: slideWidth }}>
+      <div className="overflow-hidden">
         {/* Slider */}
         <div
           className="flex"
           style={{
-            transform: `translateX(-${currentSlide * 100}%)`,
-            width: `${slideWidth * slideCount}`,
+            width: `${slideWidth * slideCount}px`,
+            transform: `translateX(-${currentSlide * slideWidth}px)`,
           }}
         >
           {/* Slide */}
