@@ -2,7 +2,11 @@ import Button from 'components/common/Button';
 
 import QuestionTitle from '../QuestionTitle';
 
-const Step2 = () => {
+type Props = {
+  onNext: () => void;
+};
+
+const Step2 = ({ onNext }: Props) => {
   return (
     <div className="flex flex-col justify-between w-full h-[calc(100%-84px)]">
       <div>
@@ -11,10 +15,11 @@ const Step2 = () => {
           className="options-gray500 h-[55px] w-full rounded-[5px] bg-gray100 p-4 font-pretendard text-[17px] tracking-[-0.3px] text-gray900 caret-indigo outline-indigo"
           maxLength={10}
           placeholder="홍길동"
-          data-ga="question_2rd"
         />
       </div>
-      <Button>다음</Button>
+      <Button onClick={onNext} data-ga="question_2rd">
+        다음
+      </Button>
     </div>
   );
 };

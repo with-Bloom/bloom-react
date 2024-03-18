@@ -7,7 +7,11 @@ const BUTTON_VALUE = [
   { id: 2, value: '신부', fill: '#FB5500' },
 ];
 
-const Step3 = () => {
+type Props = {
+  onNext: () => void;
+};
+
+const Step3 = ({ onNext }: Props) => {
   return (
     <div className="flex flex-col w-full h-full">
       <QuestionTitle text={'축사를 받을 사람은\n신랑인가요, 신부인가요?'} />
@@ -16,6 +20,7 @@ const Step3 = () => {
           <button
             key={id}
             className="custom-hover flex h-[187px] w-full flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-pretendard"
+            onClick={onNext}
             data-ga="question_3rd"
           >
             <FlowerIcon fill={fill} />

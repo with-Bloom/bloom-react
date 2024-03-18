@@ -2,7 +2,11 @@ import Button from 'components/common/Button';
 
 import QuestionTitle from '../QuestionTitle';
 
-const Step9 = () => {
+type Props = {
+  onNext: () => void;
+};
+
+const Step9 = ({ onNext }: Props) => {
   return (
     <div className="flex flex-col justify-between w-full h-[calc(100%-84px)]">
       <div>
@@ -21,7 +25,9 @@ const Step9 = () => {
           </div>
         </label>
       </div>
-      <Button ga="question_9th">내 축사 확인하기</Button>
+      <Button onClick={onNext} ga="question_9th">
+        내 축사 확인하기
+      </Button>
     </div>
   );
 };

@@ -10,7 +10,11 @@ const BUTTON_VALUE = [
   { id: 5, value: '6분' },
 ];
 
-const Step5 = () => {
+type Props = {
+  onNext: () => void;
+};
+
+const Step5 = ({ onNext }: Props) => {
   return (
     <div className="flex flex-col w-full h-full">
       <QuestionTitle text={'축사를 몇 분으로\n하면 좋을까요?'} />
@@ -21,6 +25,7 @@ const Step5 = () => {
             className={`custom-hover flex h-[55px] w-full items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-pretendard text-gray900 ${
               value === '3분' ? 'relative' : ''
             }`}
+            onClick={onNext}
             data-ga="question_5th"
           >
             {value}

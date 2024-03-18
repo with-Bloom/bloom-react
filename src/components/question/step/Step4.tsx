@@ -11,7 +11,11 @@ const BUTTON_VALUE = [
   { id: 6, value: '누나', fill: '#E991FB' },
 ];
 
-const Step4 = () => {
+type Props = {
+  onNext: () => void;
+};
+
+const Step4 = ({ onNext }: Props) => {
   return (
     <div className="flex flex-col w-full h-full">
       <QuestionTitle text={'축사를 받는 사람을\n뭐라고 부르면 좋을까요?'} />
@@ -19,7 +23,12 @@ const Step4 = () => {
         {BUTTON_VALUE.map(({ id, value, fill }) => {
           return (
             <div key={id} className="flex flex-col items-center gap-[9px]">
-              <CloudIcon className="cursor-pointer hover:fill-indigo" data-ga="question_4rd" fill={fill} />
+              <CloudIcon
+                className="cursor-pointer hover:fill-indigo"
+                onClick={onNext}
+                data-ga="question_4rd"
+                fill={fill}
+              />
               <span className="text-sm font-pretendard text-gray700">{value}</span>
             </div>
           );
