@@ -1,3 +1,5 @@
+import useInput from 'hooks/useInput';
+
 import Button from 'components/common/Button';
 
 import QuestionTitle from '../QuestionTitle';
@@ -7,6 +9,8 @@ type Props = {
 };
 
 const Step8 = ({ onNext }: Props) => {
+  const [value, handleChange] = useInput('');
+
   return (
     <div className="flex flex-col justify-between w-full h-[calc(100%-84px)]">
       <div>
@@ -18,6 +22,7 @@ const Step8 = ({ onNext }: Props) => {
               id="textarea"
               maxLength={400}
               placeholder="ex. 매일같이 학교 앞에서 떡볶이 사먹으며 친하게 지냈었다."
+              onChange={handleChange}
             />
             <span className="absolute bottom-2.5 right-3.5 mt-[30px] font-pretendard text-[14px] tracking-[-0.3px] text-gray400">
               0/400자
@@ -25,7 +30,7 @@ const Step8 = ({ onNext }: Props) => {
           </div>
         </label>
       </div>
-      <Button onClick={onNext} ga="question_8th">
+      <Button disabled={value.length === 0} onClick={onNext} ga="question_8th">
         다음
       </Button>
     </div>
