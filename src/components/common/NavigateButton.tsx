@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
-
 import { ROUTES_PATH } from 'constants/routes';
+import { Link } from 'react-router-dom';
 
 import Button from './Button';
 

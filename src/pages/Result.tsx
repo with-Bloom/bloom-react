@@ -1,12 +1,3 @@
-import { useContext, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-
-import { API_MESSAGE } from 'constants/path';
-
-import { AnswerContext } from 'context/AnswerContext';
-
-import useFetch from 'hooks/useFetch';
-
 import Header from 'components/common/Header';
 import Loading from 'components/common/Loading';
 import CopyToClipboardButton from 'components/result/resultSection/ClipboardButton';
@@ -14,6 +5,11 @@ import ResultContentBox from 'components/result/resultSection/ResultContentBox';
 import ResultRetryButton from 'components/result/resultSection/ResultRetryButton';
 import ResultTitle from 'components/result/resultSection/ResultTitle';
 import SpeechCautionSection from 'components/result/speechCautionSection/SpeechCautionSection';
+import { API_MESSAGE } from 'constants/path';
+import { AnswerContext } from 'context/AnswerContext';
+import useFetch from 'hooks/useFetch';
+import { useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Result = () => {
   const [result, setResult] = useState('');
@@ -47,7 +43,7 @@ const Result = () => {
         <Loading isRenew={true} />
       ) : (
         <>
-          <div className="flex flex-col items-center px-6 bg-cover bg-gradient">
+          <div className="flex flex-col items-center bg-gradient bg-cover px-6">
             <Header />
             <ResultTitle name={name} />
             <ResultContentBox>{result}</ResultContentBox>

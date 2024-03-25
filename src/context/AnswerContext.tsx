@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react';
-
 import { UserAnswer } from 'types/index';
 
 type ContextType = {

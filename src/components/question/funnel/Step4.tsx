@@ -17,7 +17,7 @@ type Props = {
 
 const Step4 = ({ onNext }: Props) => {
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex h-full w-full flex-col">
       <QuestionTitle text={'축사를 받는 사람을\n뭐라고 부르면 좋을까요?'} />
       <div className="grid grid-cols-4 grid-rows-2 gap-x-4 gap-y-7">
         {BUTTON_VALUE.map(({ id, value, fill }) => {
@@ -29,7 +29,7 @@ const Step4 = ({ onNext }: Props) => {
                 data-ga="question_4rd"
                 fill={fill}
               />
-              <span className="text-sm font-pretendard text-gray700">{value}</span>
+              <span className=" text-sm text-gray700">{value}</span>
             </div>
           );
         })}

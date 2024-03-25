@@ -1,10 +1,9 @@
-import { AvatarOptions, ButtonOptions, Options } from 'types/index';
-
 import AvatarButton from 'components/question/type/AvatarButton';
 import AvatarCard from 'components/question/type/AvatarCard';
 import Input from 'components/question/type/Input';
 import PrimaryButton from 'components/question/type/PrimaryButton';
 import Textarea from 'components/question/type/Textarea';
+import { AvatarOptions, ButtonOptions, Options } from 'types/index';
 
 type Props = {
   field: string;

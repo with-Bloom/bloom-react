@@ -1,6 +1,5 @@
-import { useMemo, useState } from 'react';
-
 import { Funnel, FunnelProps, NonEmptyArray, Step, StepProps } from 'components/question/\bfunnel/Funnel';
+import { useMemo, useState } from 'react';
 
 const useFunnel = <Steps extends NonEmptyArray<string>>(_: Steps, defaultStep: Steps[number]) => {
   const [step, setStep] = useState(defaultStep);

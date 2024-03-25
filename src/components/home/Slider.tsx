@@ -28,11 +28,11 @@ const Slider = ({ children, slideWidth, slideCount, showDots }: Props) => {
       </div>
       {/* Dots : showDots === true */}
       {showDots && (
-        <div className="flex justify-center gap-2 mt-5 cursor-pointer">
+        <div className="mt-5 flex cursor-pointer justify-center gap-2">
           {[...Array(slideCount)].map((_, idx) => (
             <button
               key={idx}
-              className={`w-[9px] h-[9px] rounded-full ${currentSlide === idx ? 'bg-indigo' : 'bg-gray-200'}`}
+              className={`h-[9px] w-[9px] rounded-full ${currentSlide === idx ? 'bg-indigo' : 'bg-gray-200'}`}
               onClick={() => {
                 setCurrentSlide(idx);
               }}

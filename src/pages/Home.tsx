@@ -1,6 +1,5 @@
-import NavigateButton from 'components/common/NavigateButton';
-
 import Logo from 'assets/images/logo.svg?react';
+import NavigateButton from 'components/common/NavigateButton';
 
 const Home = () => {
   return (

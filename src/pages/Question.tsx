@@ -1,6 +1,4 @@
-import Header from 'components/common/Header';
 import QuestionFunnel from 'components/question/\bfunnel/QuestionFunnel';
-import ProgressBar from 'components/question/ProgressBar';
 
 const Question = () => {
   return (

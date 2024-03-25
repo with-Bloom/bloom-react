@@ -10,13 +10,13 @@ type Props = {
 
 const Step6 = ({ onNext }: Props) => {
   return (
-    <div className="flex flex-col w-full h-full">
+    <div className="flex h-full w-full flex-col">
       <QuestionTitle text={'축사 말투는\n어떻게 할까요?'} />
       <div className="flex flex-col gap-4">
         {BUTTON_VALUE.map(({ id, value }) => (
           <button
             key={id}
-            className="custom-hover flex h-[55px] w-full items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-pretendard text-gray900"
+            className="custom-hover flex h-[55px] w-full items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6  text-gray900"
             onClick={onNext}
             data-ga="question_6th"
           >

@@ -1,7 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-
 import { ROUTES_PATH } from 'constants/routes';
-
 import Edit from 'pages/Edit';
 import Error from 'pages/Error';
 import Home from 'pages/Home';
@@ -9,6 +6,7 @@ import NotFound from 'pages/NotFound';
 import Onboarding from 'pages/Onboarding';
 import Question from 'pages/Question';
 import Result from 'pages/Result';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import Root from './Root';
 

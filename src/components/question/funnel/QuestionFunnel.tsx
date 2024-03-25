@@ -8,7 +8,7 @@ import Step5 from './Step5';
 import Step6 from './Step6';
 import Step7 from './Step7';
 import Step8 from './Step8';
-import Step9 from './step9';
+import Step9 from './Step9';
 
 const STEPS = [
   'userName',
@@ -51,7 +51,7 @@ const QuestionFunnel = () => {
         <Step8 onNext={() => setStep('textarea')} />
       </Funnel.Step>
       <Funnel.Step name="textarea">
-        <Step9 onNext={( )=> {}}/> {/* fetch 처리 */}
+        <Step9 onNext={() => {}} /> {/* fetch 처리 */}
       </Funnel.Step>
     </Funnel>
   );

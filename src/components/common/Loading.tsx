@@ -1,12 +1,9 @@
-import { getRandomText } from 'utils/index';
-
-import { useNavigate } from 'react-router-dom';
-import { BeatLoader } from 'react-spinners';
-
-import { CAUTION_LIST } from 'constants/index';
-
 import LoadingAvatar from 'assets/images/loading-avatar.svg?react';
 import RenewAvatar from 'assets/images/renew-avatar.svg?react';
+import { CAUTION_LIST } from 'constants/index';
+import { useNavigate } from 'react-router-dom';
+import { BeatLoader } from 'react-spinners';
+import { getRandomText } from 'utils/index';
 
 import Header from './Header';
 
@@ -27,7 +24,7 @@ const Loading = ({ isRenew = false }: Props) => {
 
   return (
     <div className="px-6">
-      <Header onClick={handleClick} />
+      <Header onPrev={handleClick} />
       <div className="flex flex-col gap-1.5">
         <div className="mt-[36px] flex items-center justify-between">
           <span className="text-[22px] font-bold tracking-[-0.5px] text-gray1000">{TITLE}</span>

@@ -1,5 +1,5 @@
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -20,9 +20,5 @@ export default {
         gradient: 'url("/assets/bg_result.webp")',
       },
     },
-    fontFamily: {
-      pretendard: ['Pretendard'],
-    },
-    plugins: [],
   },
 };

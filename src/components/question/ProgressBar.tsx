@@ -11,7 +11,7 @@ const ProgressBar = ({ currentStep }: Props) => {
         <div className="h-[2.4px] bg-indigo" style={{ width: `${percentage}%` }}></div>
       </div>
       <span className="text-sm font-medium text-gray300">
-        {currentPage}/{9}
+        {currentStep}/{9}
       </span>
     </div>
   );
