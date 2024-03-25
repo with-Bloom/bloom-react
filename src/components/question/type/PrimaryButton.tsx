@@ -18,7 +18,7 @@ const PrimaryButton = ({ field, ga, options, onClick }: Props) => {
       {options.map(({ id, value }) => (
         <div className="relative" key={id}>
           <button
-            className={`custom-hover flex h-[55px] w-full items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 font-pretendard text-gray900 ${
+            className={`custom-hover flex h-[55px] w-full items-center justify-items-start rounded-[5px] bg-gray100 p-[13px] py-6 text-gray900 ${
               value === '3분' ? 'relative' : ''
             }`}
             data-ga={ga}

@@ -35,17 +35,15 @@ const Onboarding = () => {
   };
 
   return (
-    <div className="w-full h-screen px-6 mx-auto py-9">
+    <div className="mx-auto h-screen w-full px-6 py-9">
       <div className="h-[calc(100%-55px)] w-full">
         <Slider {...options}>
           {slides.map(({ image, description }, index) => (
             <div key={index} className="flex flex-col items-center justify-center">
               <img src={image} className="w-[452px]" />
-              <div className='flex flex-col gap-[10px]'>
-                <p className="font-bold font-pretendard text-[23px] text-gray1000 text-center">
-                  {description.title}
-                </p>
-                <p className="trackimg-[-0.5px] font-pretendard text-[14px] text-gray800 whitespace-pre-line text-center">
+              <div className="flex flex-col gap-[10px]">
+                <p className="text-center  text-[23px] font-bold text-gray1000">{description.title}</p>
+                <p className="trackimg-[-0.5px]  whitespace-pre-line text-center text-[14px] text-gray800">
                   {description.subTitle}
                 </p>
               </div>

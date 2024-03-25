@@ -16,7 +16,7 @@ const Input = ({ field, ga, options, onClick }: Props) => {
   return (
     <>
       <input
-        className="options-gray500 h-[55px] w-full rounded-[5px] bg-gray100 p-4 font-pretendard text-[17px] tracking-[-0.3px] text-gray900 caret-indigo outline-indigo"
+        className="options-gray500 h-[55px] w-full rounded-[5px] bg-gray100 p-4 text-[17px] tracking-[-0.3px] text-gray900 caret-indigo outline-indigo"
         maxLength={10}
         placeholder={options}
         onChange={handleChange}

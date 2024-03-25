@@ -22,7 +22,7 @@ const AvatarButton = ({ field, ga, options, onClick }: Props) => {
               fill={fill}
               onClick={() => onClick(field, value)}
             />
-            <span className="text-sm font-pretendard text-gray700">{value}</span>
+            <span className="text-sm text-gray700">{value}</span>
           </div>
         );
       })}

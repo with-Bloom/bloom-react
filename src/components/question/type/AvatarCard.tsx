@@ -16,13 +16,13 @@ const AvatarCard = ({ field, ga, options, onClick }: Props) => {
       {options.map(({ id, value, fill }) => {
         return (
           <button
-            className="custom-hover flex h-[187px] w-full flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 font-pretendard"
+            className="custom-hover flex h-[187px] w-full flex-col items-center justify-between rounded-[5px] bg-gray-100 py-6 "
             key={id}
             data-ga={ga}
             onClick={() => onClick(field, value)}
           >
             <FlowerIcon fill={fill} />
-            <span className="mt-2 font-pretendard text-[17px]">{value}</span>
+            <span className="mt-2 text-[17px]">{value}</span>
           </button>
         );
       })}

@@ -5,7 +5,7 @@ const CautionList = () => {
     <div className="mb-[28px]">
       {CAUTION_CATEGORIES.map((el, index) => (
         <div className="mb-4 w-full rounded-[10px] bg-gray200 px-4 py-[29px] opacity-70" key={index}>
-          <div className="mb-[6px] font-pretendard text-base font-bold text-black">{el.title}</div>
+          <div className="mb-[6px] text-base font-bold text-black">{el.title}</div>
           <ul className="pl-4 list-disc">
             {el.description.map((desc, descIndex) => (
               <li className="mt-[12px] text-[14px] leading-[163%] tracking-[-0.5px]" key={descIndex}>

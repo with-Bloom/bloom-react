@@ -5,7 +5,7 @@ type Props = {
 const ResultRetryButton = ({ onClick }: Props) => {
   return (
     <span
-      className="cursor-pointer mt-[12px] mb-[45px] underline font-medium tracking-[-0.4px] text-sm text-gray600 font-pretendard"
+      className="mb-[45px] mt-[12px] cursor-pointer text-sm font-medium tracking-[-0.4px] text-gray600 underline "
       data-ga="result_retry"
       onClick={onClick}
     >
