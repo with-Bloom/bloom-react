@@ -17,10 +17,5 @@
     "no-unused-vars": "error",
     "no-multiple-empty-lines": "error",
     "@typescript-eslint/no-explicit-any": "off"
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
-    }
   }
 }
