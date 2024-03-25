@@ -5,9 +5,7 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <div className="w-full mx-auto bg-slate-100]">
-      <div className="h-full min-h-screen bg-white max-w-[500px] w-full mx-auto shadow-xl">
-        {children}
-      </div>
+      <div className="h-screen bg-white max-w-[500px] w-full mx-auto shadow-xl">{children}</div>
     </div>
   );
 };

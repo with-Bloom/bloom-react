@@ -1,9 +1,9 @@
 type Props = {
-  currentPage: number;
+  currentStep: number;
 };
 
-const ProgressBar = ({ currentPage }: Props) => {
-  const percentage = (currentPage / 9) * 100;
+const ProgressBar = ({ currentStep }: Props) => {
+  const percentage = (currentStep / 9) * 100;
 
   return (
     <div className="flex items-center justify-between gap-[9px]">
@@ -11,7 +11,7 @@ const ProgressBar = ({ currentPage }: Props) => {
         <div className="h-[2.4px] bg-indigo" style={{ width: `${percentage}%` }}></div>
       </div>
       <span className="text-sm font-medium font-pretendard text-gray300">
-        {currentPage}/{9}
+        {currentStep}/{9}
       </span>
     </div>
   );
